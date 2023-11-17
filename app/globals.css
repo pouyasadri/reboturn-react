@@ -26,7 +26,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 body {
-  background: #e0e0e0;
+  background: #c0c0c0;
   font-family: "Inter", sans-serif;
 }
 
@@ -53,4 +53,17 @@ a:visited {
   position: absolute;
   left: 50px;
   top: 50px;
+}
+@keyframes fade-in {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #67d2e8;
+  }
+}
+.animate-fade-in {
+  animation-name: fade-in;
+  animation-duration: 2s; /* Set the duration to 2 seconds */
+  animation-fill-mode: forwards;
 }

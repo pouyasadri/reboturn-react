@@ -14,48 +14,12 @@ import {
 } from "@react-three/drei"
 import {EffectComposer, N8AO, TiltShift2} from "@react-three/postprocessing"
 import {easing} from "maath"
-import {useEffect} from "react";
 
 const HeroSection = () => {
 
     return (
-        // <motion.div className="relative h-screen flex items-center justify-center">
-        //     <Image src="/heroBG.webp" alt="ReboTurn Logo" fill="cover" className="absolute z-0"/>
-        //     <div className={"absolute z-5"}>
-        //         <motion.div
-        //             initial={{rotateX: -90}}
-        //             animate={{rotateX: 0}}
-        //             transition={{
-        //                 type: 'easeIn',
-        //                 stiffness: 400,
-        //                 damping: 120,
-        //                 duration: 1,
-        //                 delay: 0.3,
-        //             }}
-        //             className="font-poppins text-center text-black text-9xl"
-        //         >
-        //             ReboTurn
-        //         </motion.div>
-        //         <motion.div
-        //             initial={{rotateX: -90}}
-        //             animate={{rotateX: 0}}
-        //             transition={{
-        //                 type: 'easeIn',
-        //                 stiffness: 400,
-        //                 damping: 120,
-        //                 duration: 0.8,
-        //                 delay: 1.1,
-        //             }}
-        //             className=" font-poppins text-gray-300 text-5xl"
-        //         >
-        //             The Second Generation of E-Commerce
-        //         </motion.div>
-        //     </div>
-        <>
-            {/*<Image src="/heroBG.webp" alt="ReboTurn Logo" fill="cover" className="absolute z-0"/>*/}
             <Canvas shadows
                     camera={{position: [0, 10, 0], fov: 50}}>
-                {/*<Background/>*/}
                 <color attach="background" args={["#c0c0c0"]}/>
                 <spotLight position={[20, 20, 10]} penumbra={1} castShadow angle={0.2}/>
                 <Status position={[-1, 0, -10]}/>
@@ -76,21 +40,9 @@ const HeroSection = () => {
                 </EffectComposer>
                 <Rig/>
             </Canvas>
-        </>
-        // </motion.div>
     );
 };
 
-function Background() {
-    const { scene } = useThree();
-    const texture = useLoader(THREE.TextureLoader, 'heroBG.webp'); // Replace with your image path
-
-    useEffect(() => {
-        scene.background = texture;
-    }, [scene, texture]);
-
-    return null;
-}
 
 function Rig() {
     useFrame((state, delta) => {
