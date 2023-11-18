@@ -1,0 +1,25 @@
+.octagon-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.octagon-container__before,
+.octagon-container__after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3490dc; /* Your desired background color */
+}
+
+.octagon-container__before {
+    left: -14%;
+    transform: rotate(-45deg);
+}
+
+.octagon-container__after {
+    left: 14%;
+    transform: rotate(45deg);
+}

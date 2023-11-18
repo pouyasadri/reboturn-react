@@ -22,7 +22,7 @@ const Navbar = () => (
                 Insights
             </div>
         </div>
-        <div className={"ml-2 flex bg-[#02B4D8] px-4 py-2 text-lg text-black font-light rounded-xl"}>
+        <div className={"ml-2 flex bg-[#9ae1ef] px-4 py-2 text-lg text-black font-light rounded-xl"}>
             <div className="px-3 py-2 cursor-pointer hover:bg-gray-700 transition-colors duration-200 rounded-md">
                 Contact us
             </div>
