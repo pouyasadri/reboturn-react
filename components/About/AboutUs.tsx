@@ -14,7 +14,7 @@ function AboutUs() {
         <section className="my-10">
             <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl p-10">
                 <div className="text-black font-medium text-3xl leading-relaxed">
-                    <p>At Reboturn, we're changing the game in
+                    <p>At Reboturn, we&apos;re changing the game in
                         <motion.span
                             ref={ref}
                             className="relative px-2 py-1 rounded-full font-semibold overflow-hidden inline-flex align-middle"
