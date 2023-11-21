@@ -42,7 +42,7 @@ const HeroSection = () => {
             </Float>
             <ContactShadows scale={100} position={SHADOWS_POSITION} blur={1} far={80} opacity={0.8} />
             <Environment preset="city">
-                <Lightformer intensity={8} position={LIGHTFORMER_POSITION} scale={LIGHTFORMER_SCALE}
+                <Lightformer intensity={20} position={LIGHTFORMER_POSITION} scale={LIGHTFORMER_SCALE}
                              onUpdate={(self) => self.lookAt(0, 0, 0)} />
             </Environment>
             <EffectComposer disableNormalPass>

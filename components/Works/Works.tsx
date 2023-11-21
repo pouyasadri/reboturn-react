@@ -69,12 +69,12 @@ const HorizontalScrollCarousel = () => {
         target: targetRef,
     });
 
-    const x = useTransform(scrollYProgress, [0, 1], ["30%", "-90%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["30%", "-100%"]);
 
     return (
-        <section ref={targetRef} className="relative h-[300vh] mt-[15rem] -skew-y-12 transform-gpu">
+        <section ref={targetRef} className="relative h-[300vh] mt-[15rem] mb-[15rem] -skew-y-12 transform-gpu">
             <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-                <motion.div style={{x}} className="flex gap-20">
+                <motion.div style={{x}} className="flex gap-20 ">
                     {cards.map((card) => (
                         <Card card={card}
                               key={card.id}/>
