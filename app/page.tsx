@@ -1,26 +1,27 @@
 "use client"
-import { FC, memo } from 'react';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import Navbar from '@/components/Navbar/Navbar';
-import AboutUs from '@/components/About/AboutUs';
-import ScrollComponent from '@/components/Works/Works';
-import WhatWeDo from "@/components/WhatWeDo/WhatWeDo";
-import WhoWeAre from "@/components/WhoWeAre/WhoWeAre";
+import {FC, Suspense, lazy} from 'react';
+import Navbar from "@/components/Navbar/Navbar";
 
-const NavbarMemo = memo(Navbar);
-const HeroSectionMemo = memo(HeroSection);
-const AboutUsMemo = memo(AboutUs);
-const ScrollComponentMemo = memo(ScrollComponent);
+// Lazy load the components to improve performance
+const HeroSection = lazy(() => import('@/components/HeroSection/HeroSection'));
+const AboutUs = lazy(() => import('@/components/About/AboutUs'));
+const ScrollComponent = lazy(() => import('@/components/Works/Works'));
+const WhatWeDo = lazy(() => import("@/components/WhatWeDo/WhatWeDo"));
+const WhoWeAre = lazy(() => import("@/components/WhoWeAre/WhoWeAre"));
 
+// Home component
 const Home: FC = () => {
     return (
-        <main className="relative w-screen h-screen">
-            <NavbarMemo/>
-            <HeroSectionMemo/>
-            <AboutUsMemo/>
-            <ScrollComponentMemo/>
-            <WhatWeDo/>
-            <WhoWeAre/>
+        <main className="relative w-screen h-screen ">
+            {/* Use Suspense to provide a fallback UI while the components are being loaded */}
+            <Navbar/>
+            <Suspense fallback={<div>Loading...</div>}>
+                {/*<HeroSection/>*/}
+                <AboutUs/>
+                <ScrollComponent/>
+                <WhatWeDo/>
+               <WhoWeAre/>
+            </Suspense>
         </main>
     );
 };
