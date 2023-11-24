@@ -1,5 +1,6 @@
 import React, {FC, useEffect, useRef, useState} from 'react';
 import {motion, useScroll, useTransform} from 'framer-motion';
+import Image from "next/image";
 
 interface UseScrollTransformProps {
     scrollYProgress: any;
@@ -19,17 +20,19 @@ const WhatWeDo: FC = () => {
     const thirdCardY = useScrollTransform({scrollYProgress, range: [0.3, 0.45], output: ["100vh", "9vh"]});
     const fourthCardY = useScrollTransform({scrollYProgress, range: [0.45, 0.6], output: ["100vh", "12vh"]});
 
+    const mainTextOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+    const firstTextOpacity = useTransform(scrollYProgress, [0, 0.15, 0.3], [0, 1, 0]);
     const textY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["0", "-100vh"]});
 
-    const firstCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-45%"]});
-    const secondCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-160%"]});
-    const thirdCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "30%"]});
-    const fourthCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-260%"]});
+    const firstCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-17.5vw"]});
+    const secondCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-39.5vw"]});
+    const thirdCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "4.5vw"]});
+    const fourthCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-61.5vw"]});
 
-    const firstCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["0vh", "-4vh"]});
-    const secondCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["6vh", "0vh"]});
-    const thirdCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["12vh", "0vh"]});
-    const fourthCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["18vh", "0vh"]});
+    const firstCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["3vh", "5.7vh"]});
+    const secondCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["6vh", "3.8vh"]});
+    const thirdCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["9vh", "1.9vh"]});
+    const fourthCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["12vh", "0vh"]});
     const [isScroll, setIsScroll] = useState(false);
 
     useEffect(() => {
@@ -38,121 +41,159 @@ const WhatWeDo: FC = () => {
         return () => unsubscribe();
     }, [scrollYProgress]);
     return (
-        <div ref={targetRef} className="w-[90%] mx-auto flex flex-wrap relative h-[300vh] ">
-            <div className={"sticky top-0 flex h-screen justify-stretch items-center"}>
+        <section ref={targetRef} className="w-[90%] mx-auto flex relative h-[300vh] ">
+            <div className={"sticky top-[15%] flex h-screen justify-evenly items-center"}>
+                {/*main text*/}
+                <div>
+                    <motion.div style={{y: textY}} className="w-full lg:w-1/2 h-screen p-5 lg:p-8">
+                        <h1 className="text-3xl lg:text-6xl font-bold text-black mb-4 lg:mb-8">
+                            Behind the scene of Reboturn</h1>
+                        <p className="text-base text-black font-light mb-8 lg:mb-16">
+                            Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
+                            the
+                            convenience of online shopping with the tactile feel of in-store purchases. Users can
+                            explore an
+                            extensive catalog of international brands, try items at home, and only pay for what they
+                            choose
+                            to
+                            keep.
+                        </p>
+                        <button
+                            className="text-sm mt-2.5 lg:mt-5 relative overflow-hidden border border-black bg-black p-2.5 lg:p-5 text-white lg:text-xl rounded-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#9ae1ef] before:transition-all before:duration-200 hover:text-black hover:border-[#9ae1ef] hover:before:left-0 hover:before:w-full">
+                            <span className="relative z-10">Discover more</span></button>
 
-                <motion.div style={{y: textY}} className="max-sm:w-full  h-screen w-1/3 max-sm:p-5 p-10">
-                    <h1 className="max-sm:text-3xl text-6xl font-bold text-black max-sm:mb-4 mb-8">
-                        Behind the scene of Reboturn</h1>
-                    <p className="text-base text-black font-light max-sm:mb-8 mb-16">
-                        Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining the
-                        convenience of online shopping with the tactile feel of in-store purchases. Users can explore an
-                        extensive catalog of international brands, try items at home, and only pay for what they choose
-                        to
-                        keep.
-                    </p>
-                    <button
-                        className="max-sm:text-sm max-sm:mt-2.5 mt-5 relative overflow-hidden border border-black bg-black max-sm:p-2.5 p-5 text-white text-xl rounded-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#9ae1ef] before:transition-all before:duration-200 hover:text-black hover:border-[#9ae1ef] hover:before:left-0 hover:before:w-full">
-                        <span className="relative z-10">Discover more</span></button>
-
-                </motion.div>
+                    </motion.div>
+                </div>
                 <div
-                    className={`absolute left-1/2 float-right text-black top-0 flex h-screen justify-center items-center`}>
+                    className={`w-full lg:w-1/2 lg:p-10 text-black h-screen`}>
                     {/*first*/}
-                    <motion.div className={"absolute left-[10rem] top-[10rem]"}
-                                style={{filter: "drop-shadow(-3px 6px 3px rgba(50, 50, 0, 0.6))"}}>
+                    <motion.div style={{
+                        x: firstCardX,
+                        y: isScroll ? firstCardEndY : firstCardY,
+                    }} className={"relative h-30"}>
+                        <div className={"left-[60vw]  w-[22rem] h-[30rem]"}
+                             style={{
+                                 filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
+                                 clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
+                                 background: "black",
+                             }}>
 
-                        <motion.div style={{
-                            clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
-                            borderRadius: '1rem',
-                            x: firstCardX,
-                            y: isScroll ? firstCardEndY : firstCardY,
-                        }}
-                                    className={"absolute  border-black border-[1px] z-10 bg-gray-200 w-[20rem] h-[30rem]"}>
-                            <div className={"mt-10 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
-                                Nam, totam!
+                            <div style={{
+                                clipPath: 'polygon(79.8% 0.2%, 99.8% 20.2%, 99.8% 99.8%, 0.2% 99.8%, 0.2% 0.2%)',
+
+                                background: "white",
+                            }}
+                                 className={"absolute z-10 bg-gray-200 w-full h-full"}>
+                                <div className={"mt-3 px-5 w-[80%] font-medium"}>Our platform integrates an advanced
+                                    AI assistant, offering personalized recommendations and interactive advice, tailored
+                                    to individual preferences.
+                                </div>
+                                <div
+                                    className={"w-[35rem] absolute border-b-[1px] border-black font-semibold text-2xl top-[16vw]"}
+                                    style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span
+                                        className={"absolute  ml-[10vw] -top-[3vw]"}>AI-Powered Shopping Assistant</span>
+                                </div>
+
                             </div>
-                            <div className={"w-[32rem] absolute border-b-[1px] border-black text-3xl top-[16rem]"}
-                                 style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                <span className={"absolute  ml-[10rem] -top-[3rem]"}>Algorithm</span>
-                            </div>
-                        </motion.div>
+
+                        </div>
+                        <div>
+                            <Image src={"/work1.png"} alt={""}
+                                   className={"top-[22vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl object-cover h-[42vh]"}
+                                   width={500} height={500}/>
+                        </div>
                     </motion.div>
                     {/*second*/}
-                    <motion.div className={"absolute left-[45rem] top-[8rem]"}
-                                style={{filter: "drop-shadow(3px 6px 3px rgba(50, 50, 0, 0.6))"}}>
-                        <motion.div
-                            style={{
-                                y: isScroll ? secondCardEndY : secondCardY,
-                                x: secondCardX,
-                                clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
-                                boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.1)',
-                                padding: '1rem',
-                                borderRadius: '1rem',
+                    <motion.div style={{
+                        x: secondCardX,
+                        y: isScroll ? secondCardEndY : secondCardY,
+                    }} className={"relative h-30 -top-[57vh] -left-[3vw]"}>
+                        <div className={"left-[60vw]  w-[22rem] h-[30rem]"}
+                             style={{
+                                 filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
+                                 clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
+                                 background: "black",
+                             }}>
+
+                            <div style={{
+                                clipPath: 'polygon(79.8% 0.2%, 99.8% 20.2%, 99.8% 99.8%, 0.2% 99.8%, 0.2% 0.2%)',
+
+                                background: "white",
                             }}
-                            className={"absolute z-10 border-[1px] border-black right-[13.5rem] bg-gray-200 w-[20rem] h-[30rem]"}
-                        >
-                            <div className={"mt-10 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
-                                Nam, totam!
+                                 className={"absolute z-10 bg-gray-200 w-full h-full"}>
+                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit.
+                                    Nam, totam!
+                                </div>
+                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
+                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                </div>
                             </div>
-                            <div
-                                className={"w-[30rem] absolute border-b-[1px] border-black text-3xl top-[15rem]"}
-                                style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                <span className={"absolute ml-[10rem] -top-[3rem]"}>Application</span>
-                            </div>
-                        </motion.div>
+                        </div>
                     </motion.div>
                     {/*third*/}
-                    <motion.div className={"absolute left-[55rem] top-[8rem]"}
-                                style={{filter: "drop-shadow(-3px 6px 3px rgba(50, 50, 0, 0.6))"}}>
-                        <motion.div style={{
-                            y: isScroll ? thirdCardEndY : thirdCardY,
-                            x: thirdCardX,
-                            clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
-                            boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.1)',
-                            padding: '1rem',
-                            borderRadius: '1rem',
-                        }}
-                                    className={"absolute z-10 border-black border-[1px] right-[18.5rem] bg-gray-200 w-[20rem] h-[30rem]"}>
-                            <div className={"mt-10 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
-                                Nam, totam!
+                    <motion.div style={{
+                        x: thirdCardX,
+                        y: isScroll ? thirdCardEndY : thirdCardY,
+                    }} className={"relative h-30 -top-[114vh] left-[3vw]"}>
+                        <div className={"left-[60vw]  w-[22rem] h-[30rem]"}
+                             style={{
+                                 filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
+                                 clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
+                                 background: "black",
+                             }}>
+
+                            <div style={{
+                                clipPath: 'polygon(79.8% 0.2%, 99.8% 20.2%, 99.8% 99.8%, 0.2% 99.8%, 0.2% 0.2%)',
+
+                                background: "white",
+                            }}
+                                 className={"absolute z-10 bg-gray-200 w-full h-full"}>
+                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit.
+                                    Nam, totam!
+                                </div>
+                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
+                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                </div>
                             </div>
-                            <div
-                                className={"w-[30rem] absolute border-b-[1px] border-black text-3xl top-[15rem]"}
-                                style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                <span className={"absolute ml-[10rem] -top-[3rem]"}>Application</span>
-                            </div>
-                        </motion.div>
+                        </div>
                     </motion.div>
                     {/*fourth*/}
-                    <motion.div className={"absolute left-[48rem] top-[8rem]"}
-                                style={{filter: "drop-shadow(3px 6px 3px rgba(50, 50, 0, 0.6))"}}>
-                        <motion.div style={{
-                            y: isScroll ? fourthCardEndY : fourthCardY,
-                            x: fourthCardX,
-                            clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
-                            boxShadow: '0px 10px 15px rgba(0, 0, 0, 0.1)',
-                            padding: '1rem',
-                            borderRadius: '1rem',
-                        }}
-                                    className={"absolute z-10 border-black border-[1px] right-[18.5rem] bg-gray-200 w-[20rem] h-[30rem]"}>
-                            <div className={"mt-10 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
-                                Nam, totam!
+                    <motion.div style={{
+                        x: fourthCardX,
+                        y: isScroll ? fourthCardEndY : fourthCardY,
+                    }} className={"relative h-30 -top-[171vh] -left-[6vw]"}>
+                        <div className={"left-[60vw]  w-[22rem] h-[30rem]"}
+                             style={{
+                                 filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
+                                 clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
+                                 background: "black",
+                             }}>
+
+                            <div style={{
+                                clipPath: 'polygon(79.8% 0.2%, 99.8% 20.2%, 99.8% 99.8%, 0.2% 99.8%, 0.2% 0.2%)',
+
+                                background: "white",
+                            }}
+                                 className={"absolute z-10 bg-gray-200 w-full h-full"}>
+                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
+                                    elit.
+                                    Nam, totam!
+                                </div>
+                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
+                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                </div>
                             </div>
-                            <div
-                                className={"w-[30rem] absolute border-b-[1px] border-black text-3xl top-[15rem]"}
-                                style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                <span className={"absolute ml-[10rem] -top-[3rem]"}>Application</span>
-                            </div>
-                        </motion.div>
+                        </div>
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
