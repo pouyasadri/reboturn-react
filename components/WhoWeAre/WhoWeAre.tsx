@@ -10,7 +10,7 @@ const Member: FC<MemberProps> = ({ name, role }) => (
     <div className={"flex justify-between items-center border-b-[1px] border-black"}>
         <div className={"flex justify-center items-center "}>
             <div className={"p-10"}>
-                <Image className={"rounded-3xl"} src={"/texture1.png"} alt={"texture1"} width={220} height={200}/>
+                <Image className={"rounded-3xl aspect-square"} src={"/CTO.jpg"} alt={"texture1"} width={220} height={100}/>
             </div>
             <div className={"text-left p-10"}>
                 <h2 className={"text-3xl mb-5 font-semibold"}>{name}</h2>

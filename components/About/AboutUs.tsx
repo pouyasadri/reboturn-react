@@ -4,7 +4,7 @@ import React, {ReactNode, useCallback, ReactElement, memo, useEffect, useRef} fr
 
 // Define constants for cleaner code and better performance
 const ANIMATION_INITIAL = {x: '-100%'};
-const ANIMATION_TRANSITION = {duration: 0.8, ease: "easeInOut", delay: 0.2};
+const ANIMATION_TRANSITION = {duration: 0.8, ease: "easeIn", delay: 0.2};
 const ANIMATION_STYLE = {
     position: 'absolute',
     top: 0,

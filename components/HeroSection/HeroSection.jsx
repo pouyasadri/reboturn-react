@@ -1,5 +1,6 @@
 import {Canvas, useFrame, useLoader} from '@react-three/fiber';
 import * as THREE from "three"
+import {debounce} from 'lodash';
 import {
     useGLTF,
     Float,
@@ -35,7 +36,7 @@ const HeroSection = memo(function HeroSection() {
             <spotLight position={SPOTLIGHT_POSITION} penumbra={1} castShadow angle={0.2}/>
             <Status position={STATUS_POSITION}/>
             <Caption position={CAPTION_POSITION}/>
-            <Float floatIntensity={2}>
+            <Float floatIntensity={1.5}>
                 <Center>
                     <Arrow/>
                 </Center>
@@ -73,9 +74,9 @@ const Arrow = memo(function Arrow() {
     const texture = useLoader(THREE.TextureLoader, TEXTURE_PATH);
     const [scale, setScale] = useState(getScale);
 
-    const handleResize = useCallback(() => {
+    const handleResize = useCallback(debounce(() => {
         setScale(getScale());
-    }, []);
+    }, 300), []);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -93,9 +94,9 @@ const Arrow = memo(function Arrow() {
     );
 });
 const getTitleFontSize = () => {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 1024) {
         return [8, '13.5rem'];
-    } else if (window.innerWidth < 900 && window.innerWidth >= 600) {
+    } else if (window.innerWidth < 1024 && window.innerWidth >= 600) {
         return [4.5, '10rem'];
     } else if (window.innerWidth < 600) {
         return [3.5, '8rem'];
@@ -107,9 +108,9 @@ const getTitleFontSize = () => {
 // Status component for displaying status text
 function Status(props) {
     const [fontSize, setFontSize] = useState(getTitleFontSize);
-    const handleResize = useCallback(() => {
+    const handleResize = useCallback(debounce(() => {
         setFontSize(getTitleFontSize());
-    }, []);
+    }, 300), []);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -130,9 +131,9 @@ function Status(props) {
 
 // Caption component for displaying caption text
 const getCaptionFontSize = () => {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 1024) {
         return [2, '8rem'];
-    } else if (window.innerWidth < 900 && window.innerWidth >= 600) {
+    } else if (window.innerWidth < 1024 && window.innerWidth >= 600) {
         return [1.2, '4.8rem'];
     } else if (window.innerWidth < 600) {
         return [1, '2rem'];
@@ -144,9 +145,9 @@ const getCaptionFontSize = () => {
 function Caption(props) {
     const [fontSize, setFontSize] = useState(getCaptionFontSize);
 
-    const handleResize = useCallback(() => {
+    const handleResize = useCallback(debounce(() => {
         setFontSize(getCaptionFontSize());
-    }, []);
+    }, 300), []);
 
     useEffect(() => {
         window.addEventListener('resize', handleResize);
@@ -169,7 +170,7 @@ function Caption(props) {
 const getScale = () => {
     if (window.innerWidth >= 1024) {
         return 4;
-    } else if (window.innerWidth < 900 && window.innerWidth >= 600) {
+    } else if (window.innerWidth < 1024 && window.innerWidth >= 600) {
         return 3.5;
     } else if (window.innerWidth < 600) {
         return 2.5;

@@ -14,14 +14,19 @@ const Home: FC = () => {
     return (
         <main className="relative w-screen h-screen ">
             {/* Use Suspense to provide a fallback UI while the components are being loaded */}
-            <Navbar/>
-            <Suspense fallback={<div>Loading...</div>}>
-                {/*<HeroSection/>*/}
-                <AboutUs/>
-                <ScrollComponent/>
-                <WhatWeDo/>
-               <WhoWeAre/>
-            </Suspense>
+            {/*<Navbar/>*/}
+            {/*<Suspense fallback={<div>Loading...</div>}>*/}
+            {/*    <HeroSection/>*/}
+            {/*    <AboutUs/>*/}
+            {/*</Suspense>*/}
+            {/*<Suspense fallback={<div>Loading...</div>}>*/}
+            {/*    <ScrollComponent/>*/}
+            {/*</Suspense>*/}
+            {/*<Suspense fallback={<div>Loading...</div>}>*/}
+            {/*    <WhatWeDo/>*/}
+            {/*</Suspense>*/}
+            <WhoWeAre/>
+
         </main>
     );
 };
