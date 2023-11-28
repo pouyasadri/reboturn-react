@@ -13,9 +13,9 @@ const WhoWeAre = lazy(() => import("@/components/WhoWeAre/WhoWeAre"));
 const Home: FC = () => {
     return (
         <main className="relative w-screen h-screen ">
-
+            <Navbar/>
             <Suspense fallback={<div>Loading...</div>}>
-                <Navbar/>
+
                 <HeroSection/>
                 <AboutUs/>
                 <ScrollComponent/>
