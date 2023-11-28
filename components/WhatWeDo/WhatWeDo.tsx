@@ -99,7 +99,7 @@ const WhatWeDo: FC = () => {
 
                         </div>
                         <div className={""}>
-                            <Image src={"/work1.png"} alt={""}
+                            <Image src={"/AI.png"} alt={""}
                                    className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
                                    width={500} height={500}/>
                         </div>
@@ -177,7 +177,7 @@ const WhatWeDo: FC = () => {
 
                         </div>
                         <div className={""}>
-                            <Image src={"/card3.png"} alt={""}
+                            <Image src={"/UI.png"} alt={""}
                                    className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
                                    width={500} height={500}/>
                         </div>

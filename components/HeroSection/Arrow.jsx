@@ -5,13 +5,12 @@ import {useLoader} from "@react-three/fiber";
 import {debounce} from "lodash";
 import * as THREE from "three";
 const ARROW_MODEL_PATH = "/arrow.glb";
-const TEXTURE_PATH = 'texture3.png';
+const TEXTURE_PATH = 'texture.png';
 
 const Arrow = memo(function Arrow() {
     const {nodes} = useGLTF(ARROW_MODEL_PATH);
     const texture = useLoader(THREE.TextureLoader, TEXTURE_PATH);
     const [scale, setScale] = useState(getScale);
-    // const updateFontSize = useMemo(() => debounce(() => setFontSize(calculateCaptionFontSize()), 300), []);
     const updateScale = useMemo(() => debounce(() => setScale(getScale()), 300), []);
 
     useEffect(() => {
