@@ -29,14 +29,11 @@ const WhatWeDo: FC = () => {
     const thirdCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "4.5vw"]});
     const fourthCardX = useScrollTransform({scrollYProgress, range: [0.6, 1], output: ["0", "-61.5vw"]});
 
-    const firstCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["3vh", "5.7vh"]});
+    const firstCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["3vh", "7.7vh"]});
     const secondCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["6vh", "3.8vh"]});
-    const thirdCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["9vh", "1.9vh"]});
-    const fourthCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["12vh", "0vh"]});
+    const thirdCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["9vh", "0vh"]});
+    const fourthCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["12vh", "-3.8vh"]});
     const [isScroll, setIsScroll] = useState(false);
-    const display = useTransform(scrollYProgress, (pos) => {
-        return pos <= 0.15 ? "block" : "none";
-    });
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange(v => setIsScroll(v > 0.6));
 
@@ -50,16 +47,6 @@ const WhatWeDo: FC = () => {
                     <motion.div style={{y: textY}} className="w-full lg:w-1/2 h-screen p-2.5 lg:p-5">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Behind the scene of Reboturn</h1>
-                        <p style={{display: display.get()}} className=" text-lg text-black font-light mb-2.5 lg:mb-5">
-                            Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
-                            the
-                            convenience of online shopping with the tactile feel of in-store purchases. Users can
-                            explore an
-                            extensive catalog of international brands, try items at home, and only pay for what they
-                            choose
-                            to
-                            keep.
-                        </p>
                         <p className=" text-lg text-black font-light mb-2.5 lg:mb-5">
                             Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
                             the

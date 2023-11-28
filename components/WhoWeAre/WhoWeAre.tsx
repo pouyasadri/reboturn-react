@@ -15,7 +15,7 @@ const Member: FC<MemberProps> = ({ name, role ,image}) => (
             </div>
             <div className={"text-left lg:p-10 p-5"}>
                 <h2 className={"lg:text-3xl text-base lg:mb-5 mb-2.5 font-semibold"}>{name}</h2>
-                <span className={"lg:mt-5 mt-2.5 bg-[#9ae1ef] rounded-full lg:px-3 lg:py-1 px-1.5 py-0.5 lg:text-xl text-base text-center"}>{role}</span>
+                <span className={"lg:mt-5 mt-2.5 bg-[#9ae1ef] rounded-full lg:px-3 px-1.5 py-1 lg:text-xl text-base text-center"}>{role}</span>
             </div>
         </div>
         <div className={"text-left lg:w-1/3 font-light text-sm lg:text-base mb-5"}>
@@ -28,7 +28,7 @@ const Member: FC<MemberProps> = ({ name, role ,image}) => (
 );
 
 const WhoWeAre: FC = () => (
-    <div className={"w-[90%] mx-auto lg:mt-20 mt-10 text-black"}>
+    <div className={"w-[90%] mx-auto h-screen lg:mt-20 mt-10 text-black"}>
         <Member name="SINA GANJI" role="CEO & Founder" image={"/Sina.png"}/>
         <Member name="SEYEDPOUYA SADRIFARD" role="CTO & Co-Founder" image={"/CTO.jpeg"}/>
         <Member name="DANIAL POUR ARAB" role="CTO & Co-Founder" image={"/Danial.jpg"}/>
