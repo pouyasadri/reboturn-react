@@ -1,8 +1,9 @@
 import Image from "next/image";
-import {motion, useScroll, useTransform,AnimatePresence} from "framer-motion";
+import {motion, useScroll, useTransform, AnimatePresence} from "framer-motion";
 import {Fragment, useRef, useState} from "react";
-import { useClickAway } from "react-use";
-import { Squash as Hamburger } from "hamburger-react";
+import {useClickAway} from "react-use";
+import {Squash as Hamburger} from "hamburger-react";
+import {Link} from 'react-scroll';
 // Define constants for cleaner code and better performance
 const NAV_ITEMS = ["Work", "Who we are", "What we do", "Insights"];
 const LOGO_SRC = "/logo.png";
@@ -50,10 +51,15 @@ const Navbar = () => {
                     className={"lg:flex justify-between items-center hidden lg:gap-3 max-md:gap-2 bg-black  text-white lg:px-6 max-md:px-3 lg:py-1 max-md:py-0.5 lg:text-xl max-md:text-sm font-light rounded-xl"}>
                     {/* Map through navigation items and render each one */}
                     {NAV_ITEMS.map((item, index) => (
-                        <div key={index}
-                             className="lg:px-3 max-md:px-1 lg:py-2 max-md:py-1 cursor-pointer hover:bg-gray-700 transition-colors duration-200 rounded-md">
+                        <Link
+                            key={index}
+                            to={item.toLowerCase().replace(/\s/g, '')}
+                            smooth={true}
+                            duration={500 * (index + 1)}
+                            className="lg:px-3 text-white max-md:px-1 lg:py-2 max-md:py-1 cursor-pointer hover:bg-gray-700 transition-colors duration-200 rounded-md"
+                        >
                             {item}
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 {/* Contact us section */}
@@ -86,14 +92,14 @@ const NavMobile = () => {
 
     return (
         <div ref={ref} className="lg:hidden bg-[#9ae1ef] mr-5 p-1 md:mt-6 rounded-xl">
-            <Hamburger color={"black"} toggled={isOpen} size={24} toggle={setOpen} />
+            <Hamburger color={"black"} toggled={isOpen} size={24} toggle={setOpen}/>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                        transition={{duration: 0.2}}
                         className="fixed left-0 right-0 top-[5.5rem] p-5 pt-0 bg-[#c0c0c0] z-10 h-[100vh] border-b border-b-white/20"
                     >
                         <ul className="grid gap-2">
@@ -101,29 +107,36 @@ const NavMobile = () => {
 
 
                                 return (
-                                    <motion.li
-                                        initial={{ scale: 0, opacity: 0 }}
-                                        animate={{ scale: 1, opacity: 1 }}
-                                        transition={{
-                                            type: "spring",
-                                            stiffness: 260,
-                                            damping: 20,
-                                            delay: 0.1 + index / 10,
-                                        }}
-                                        key={item}
-                                        className="w-full p-[0.08rem] mt-1 rounded-xl "
-                                    >
-                                        <a
-                                            onClick={() => setOpen((prev) => !prev)}
-                                            className={
-                                                "flex items-center justify-between w-full p-5 rounded-xl "
-                                            }
-                                            href={"/"}
+                                    <Link
+                                        key={index}
+                                        to={item.toLowerCase().replace(/\s/g, '')}
+                                        smooth={true}
+                                        duration={500}>
+                                        <motion.li
+                                            initial={{scale: 0, opacity: 0}}
+                                            animate={{scale: 1, opacity: 1}}
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 260,
+                                                damping: 20,
+                                                delay: 0.1 + index / 10,
+                                            }}
+                                            key={item}
+                                            className="w-full p-[0.08rem] mt-1 rounded-xl "
                                         >
-                                            <span className="flex gap-1 md:text-3xl text-2xl font-semibold">{item}</span>
-                                            {/*<Icon className="text-xl" />*/}
-                                        </a>
-                                    </motion.li>
+                                            <a
+                                                onClick={() => setOpen((prev) => !prev)}
+                                                className={
+                                                    "flex items-center justify-between w-full p-5 rounded-xl "
+                                                }
+                                                href={"/"}
+                                            >
+                                                <span
+                                                    className="flex gap-1 md:text-3xl text-2xl font-semibold">{item}</span>
+                                                {/*<Icon className="text-xl" />*/}
+                                            </a>
+                                        </motion.li>
+                                    </Link>
                                 );
                             })}
                         </ul>

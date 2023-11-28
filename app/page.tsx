@@ -17,10 +17,19 @@ const Home: FC = () => {
             <Suspense fallback={<div>Loading...</div>}>
 
                 <HeroSection/>
-                <AboutUs/>
-                <ScrollComponent/>
-                <WhatWeDo/>
-                <WhoWeAre/>
+
+                <div id="aboutus">
+                    <AboutUs/>
+                </div>
+                <div id="work">
+                    <ScrollComponent/>
+                </div>
+                <div id="whatwedo">
+                    <WhatWeDo/>
+                </div>
+                <div id="whoweare">
+                    <WhoWeAre/>
+                </div>
             </Suspense>
         </main>
     );
