@@ -34,7 +34,9 @@ const WhatWeDo: FC = () => {
     const thirdCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["9vh", "1.9vh"]});
     const fourthCardEndY = useScrollTransform({scrollYProgress, range: [0.6, 0.8], output: ["12vh", "0vh"]});
     const [isScroll, setIsScroll] = useState(false);
-
+    const display = useTransform(scrollYProgress, (pos) => {
+        return pos <= 0.15 ? "block" : "none";
+    });
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange(v => setIsScroll(v > 0.6));
 
@@ -42,13 +44,23 @@ const WhatWeDo: FC = () => {
     }, [scrollYProgress]);
     return (
         <section ref={targetRef} className="w-[90%] mx-auto flex relative h-[300vh] ">
-            <div className={"sticky top-[15%] flex h-screen justify-evenly items-center"}>
+            <div className={"sticky top-[10%] flex h-screen justify-evenly items-center"}>
                 {/*main text*/}
                 <div>
-                    <motion.div style={{y: textY}} className="w-full lg:w-1/2 h-screen p-5 lg:p-8">
-                        <h1 className="text-3xl lg:text-6xl font-bold text-black mb-4 lg:mb-8">
+                    <motion.div style={{y: textY}} className="w-full lg:w-1/2 h-screen p-2.5 lg:p-5">
+                        <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Behind the scene of Reboturn</h1>
-                        <p className="text-base text-black font-light mb-8 lg:mb-16">
+                        <p style={{display: display.get()}} className=" text-lg text-black font-light mb-2.5 lg:mb-5">
+                            Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
+                            the
+                            convenience of online shopping with the tactile feel of in-store purchases. Users can
+                            explore an
+                            extensive catalog of international brands, try items at home, and only pay for what they
+                            choose
+                            to
+                            keep.
+                        </p>
+                        <p className=" text-lg text-black font-light mb-2.5 lg:mb-5">
                             Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
                             the
                             convenience of online shopping with the tactile feel of in-store purchases. Users can
@@ -84,7 +96,8 @@ const WhatWeDo: FC = () => {
                                 background: "white",
                             }}
                                  className={"absolute z-10 bg-gray-200 w-full h-full"}>
-                                <div className={"mt-3 px-5 w-[80%] font-medium"}>Our platform integrates an advanced
+                                <div className={"mt-5 px-5 leading-relaxed w-[82%] text-sm font-medium"}>Our platform
+                                    integrates an advanced
                                     AI assistant, offering personalized recommendations and interactive advice, tailored
                                     to individual preferences.
                                 </div>
@@ -98,9 +111,9 @@ const WhatWeDo: FC = () => {
                             </div>
 
                         </div>
-                        <div>
+                        <div className={""}>
                             <Image src={"/work1.png"} alt={""}
-                                   className={"top-[22vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl object-cover h-[42vh]"}
+                                   className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
                                    width={500} height={500}/>
                         </div>
                     </motion.div>
@@ -122,15 +135,26 @@ const WhatWeDo: FC = () => {
                                 background: "white",
                             }}
                                  className={"absolute z-10 bg-gray-200 w-full h-full"}>
-                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.
-                                    Nam, totam!
+                                <div className={"mt-5 px-5 leading-relaxed w-[82%] text-sm font-medium"}>The platform
+                                    uses an advanced algorithm for effective delivery management. This algorithm
+                                    considers the storage and energy capacity of bicycles and customers&#39; preferred
+                                    delivery times, incorporating tools like Google&#39;s OR-Tools and OSRM for optimal
+                                    route planning.
                                 </div>
-                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
-                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                <div
+                                    className={"w-[35rem] absolute border-b-[1px] border-black font-semibold text-2xl top-[16vw]"}
+                                    style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span
+                                        className={"absolute  ml-[10vw] -top-[3vw]"}>Optimized Delivery Algorithm</span>
                                 </div>
+
                             </div>
+
+                        </div>
+                        <div className={""}>
+                            <Image src={"/map.png"} alt={""}
+                                   className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
+                                   width={500} height={500}/>
                         </div>
                     </motion.div>
                     {/*third*/}
@@ -151,15 +175,24 @@ const WhatWeDo: FC = () => {
                                 background: "white",
                             }}
                                  className={"absolute z-10 bg-gray-200 w-full h-full"}>
-                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.
-                                    Nam, totam!
+                                <div className={"mt-5 px-5 leading-relaxed w-[82%] text-sm font-medium"}>Reboturn
+                                    provides intuitive interfaces for customers, local businesses, and couriers, ranging
+                                    from advanced shopping experiences to efficient stock management systems.
                                 </div>
-                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
-                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                <div
+                                    className={"w-[35rem] absolute border-b-[1px] border-black font-semibold text-2xl top-[16vw]"}
+                                    style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span
+                                        className={"absolute  ml-[10vw] -top-[3vw]"}>User-Friendly Interfaces</span>
                                 </div>
+
                             </div>
+
+                        </div>
+                        <div className={""}>
+                            <Image src={"/card3.png"} alt={""}
+                                   className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
+                                   width={500} height={500}/>
                         </div>
                     </motion.div>
                     {/*fourth*/}
@@ -180,15 +213,25 @@ const WhatWeDo: FC = () => {
                                 background: "white",
                             }}
                                  className={"absolute z-10 bg-gray-200 w-full h-full"}>
-                                <div className={"mt-5 p-5 w-[70%]"}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit.
-                                    Nam, totam!
+                                <div className={"mt-5 px-5 leading-relaxed w-[82%] text-sm font-medium"}>The core of
+                                    Reboturn&#39;s e-commerce strategy is its advanced logistic hub network. These hubs are
+                                    key to managing inventory and facilitating efficient deliveries, integrating
+                                    real-time stock synchronization and using eco-friendly, high-capacity bicycles.
                                 </div>
-                                <div className={"w-[35rem] absolute border-b-[1px] border-black text-3xl top-[16vw]"}
-                                     style={{transform: 'rotate(90deg) translateY(-100%)'}}>
-                                    <span className={"absolute  ml-[15vw] -top-[3vw]"}>Algorithm</span>
+                                <div
+                                    className={"w-[35rem] absolute border-b-[1px] border-black font-semibold text-2xl top-[16vw]"}
+                                    style={{transform: 'rotate(90deg) translateY(-100%)'}}>
+                                    <span
+                                        className={"absolute  ml-[10vw] -top-[3vw]"}>Reboturn’s Logistic Innovation</span>
                                 </div>
+
                             </div>
+
+                        </div>
+                        <div className={""}>
+                            <Image src={"/logistic.png"} alt={""}
+                                   className={"top-[28vh] rounded-3xl absolute z-20 left-[0.75vw] w-[18.5vw] shadow-2xl shadow-black object-cover h-[38vh]"}
+                                   width={500} height={500}/>
                         </div>
                     </motion.div>
                 </div>

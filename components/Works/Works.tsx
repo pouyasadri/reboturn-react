@@ -7,15 +7,15 @@ interface CardWithBackgroundProps {
 
 const CardWithBackground: FC<CardWithBackgroundProps> = memo(function CardWithBackground({image}) {
     return (
-        <Parallax speed={-25} className={"overflow-x-hidden"}>
+        <Parallax speed={-8} className={"overflow-x-hidden"}>
             <div className="relative m-2 h-[30rem] w-[50rem] bg-neutral-200 skew-x-1 -skew-y-1 rounded-xl shadow-3xl"
                  style={{
                      clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)',
                  }}
             >
                 <ParallaxBanner
-                    layers={[{image: image, speed: -20}]}
-                    className="h-[30rem] w-[50rem]"
+                    layers={[{image: image, speed: -8,scale:[1.1,1.1]}]}
+                    className="aspect-[5/3] "
 
                 />
             </div>
@@ -39,7 +39,7 @@ interface ContentSectionProps {
 
 const ContentSection: FC<ContentSectionProps> = memo(function ContentSection({text}) {
             return (
-                <div className="lg:mt-2.5 text-black text-bases lg:text-lg max-sm:w-[70vw] max-sm:mx-auto">
+                <div className="lg:mt-2.5 text-black text-bases lg:text-xl max-sm:w-[70vw] max-sm:mx-auto">
                     <p>{text}</p>
                 </div>
             );
@@ -49,12 +49,11 @@ const ContentSection: FC<ContentSectionProps> = memo(function ContentSection({te
 const ServiceSection: FC<{ image: string, title: string, text: string }> = memo(function ServiceSection({image, title, text}) {
 
     return (
-        <div className="flex justify-evenly items-center h-screen mb-[10rem]">
+        <div className="flex justify-evenly items-center h-screen">
             <CardWithBackground image={image}/>
             <div className="w-1/3">
-                <TagSection/>
                 <div className="mt-5">
-                    <h2 className="text-4xl font-semibold">{title}</h2>
+                    <h2 className="text-4xl font-bold">{title}</h2>
                 </div>
                 <ContentSection text={text}/>
             </div>
@@ -67,12 +66,12 @@ const HorizontalScrollCarousel: FC = () => (
                 <ParallaxProvider>
                     <div className="text-black top-0">
                         <ServiceSection
-                            image={"Service1.png"}
+                            image={"card1.png"}
                             title={"Seamless Online Shopping Experience"}
                             text={" Reboturn provides an effortless online shopping experience, connecting customers to a wide range of products from local and major brands. The platform features an intuitive interface and AI assistance, making shopping and returns simple and convenient. "}
                         />
                         <ServiceSection
-                            image={"Service2.png"}
+                            image={"delivery.png"}
                             title={"Flexible Delivery Scheduling"}
                             text={"Enjoy the convenience of scheduling your deliveries at times that suit you best. Reboturn’s flexible delivery options, including eco-friendly bike couriers, ensure that your purchases arrive when it is most convenient for you, enhancing your overall shopping experience. "}
                         />
@@ -82,17 +81,17 @@ const HorizontalScrollCarousel: FC = () => (
                             text={"Our hassle-free return policy simplifies your shopping experience. With easy online return arrangements and convenient pickup by our couriers, returning products is as effortless as buying them. "}
                         />
                         <ServiceSection
-                            image={"Service4.png"}
+                            image={"eco-1.png"}
                             title={"Eco-Friendly Delivery and Returns"}
                             text={"Commitment to sustainability is at our core. Reboturn's eco-friendly and efficient delivery and return services utilize bicycle couriers and focus on providing you with the nearest products to reduce environmental impact, offering a guilt-free and convenient shopping experience. "}
                         />
                     </div>
                 </ParallaxProvider>
             </section>
-            <section className={"lg:hidden"}>
+            <section className={"lg:hidden overflow-x-hidden"}>
                 <div className={"my-10"}>
                     <div
-                        className="relative m-1 mx-auto h-[50vh] w-[90vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
+                        className="relative  mx-auto h-[50vh] w-[85vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
                         style={{
                             clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                         }}
@@ -123,14 +122,14 @@ const HorizontalScrollCarousel: FC = () => (
                 </div>
                 <div className={"my-10"}>
                     <div
-                        className="relative m-1 mx-auto h-[50vh] w-[90vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
+                        className="relative  mx-auto h-[50vh] w-[85vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
                         style={{
                             clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                         }}
                     >
                         <div
                             style={{
-                                backgroundImage: `url(Service2.png)`,
+                                backgroundImage: `url(delivery.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -153,7 +152,7 @@ const HorizontalScrollCarousel: FC = () => (
                 </div>
                 <div className={"my-10"}>
                     <div
-                        className="relative m-1 mx-auto h-[50vh] w-[90vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
+                        className="relative mx-auto h-[50vh] w-[85vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
                         style={{
                             clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                         }}
@@ -183,14 +182,14 @@ const HorizontalScrollCarousel: FC = () => (
                 </div>
                 <div className={"my-10"}>
                     <div
-                        className="relative m-1 mx-auto h-[50vh] w-[90vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
+                        className="relative mx-auto h-[50vh] w-[85vw] overflow-hidden bg-neutral-200  rounded-xl shadow-3xl"
                         style={{
                             clipPath: 'polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)'
                         }}
                     >
                         <div
                             style={{
-                                backgroundImage: `url(Service4.png)`,
+                                backgroundImage: `url(eco-1.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center",
                                 backgroundRepeat: "no-repeat",
@@ -205,7 +204,7 @@ const HorizontalScrollCarousel: FC = () => (
                         ></div>
 
                     </div>
-                    <div className="my-5">
+                    <div className="my-5 mx-auto">
                         <h2 className="text-2xl text-black w-[70vw] mx-auto font-semibold">Eco-Friendly Delivery and
                             Returns</h2>
                     </div>

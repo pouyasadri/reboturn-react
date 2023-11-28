@@ -22,10 +22,10 @@ const Home: FC = () => {
             {/*<Suspense fallback={<div>Loading...</div>}>*/}
             {/*    <ScrollComponent/>*/}
             {/*</Suspense>*/}
-            <Suspense fallback={<div>Loading...</div>}>
-                <WhatWeDo/>
-            </Suspense>
-            {/*<WhoWeAre/>*/}
+            {/*<Suspense fallback={<div>Loading...</div>}>*/}
+            {/*    <WhatWeDo/>*/}
+            {/*</Suspense>*/}
+            <WhoWeAre/>
 
         </main>
     );
