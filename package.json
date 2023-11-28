@@ -29,6 +29,7 @@
     "webgl-sdf-generator": "^1.1.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

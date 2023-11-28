@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {motion, useScroll, useTransform, AnimatePresence} from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 import {Fragment, useRef, useState} from "react";
 import {useClickAway} from "react-use";
 import {Squash as Hamburger} from "hamburger-react";
