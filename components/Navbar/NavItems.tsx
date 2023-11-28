@@ -2,8 +2,10 @@
 import {FC, memo} from 'react';
 import {Link} from 'react-scroll';
 import {motion} from 'framer-motion';
+import dynamic from "next/dynamic";
 
 const NAV_ITEMS = ["Work", "Who we are", "What we do", "Insights"];
+const NavMobile = dynamic(() => import('@/components/Navbar/NavMobile'));
 
 const NavItems: FC = memo(function NavItems() {
     return (
@@ -35,6 +37,7 @@ const NavItems: FC = memo(function NavItems() {
                     Contact us
                 </div>
             </div>
+            <NavMobile/>
         </motion.div>
     );
 });
