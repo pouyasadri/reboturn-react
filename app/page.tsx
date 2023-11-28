@@ -1,6 +1,6 @@
 "use client"
-import { FC, Suspense, lazy, useState } from 'react';
-import { InView } from 'react-intersection-observer';
+import {FC, Suspense, lazy, useState} from 'react';
+import {InView} from 'react-intersection-observer';
 import Navbar from "@/components/Navbar/Navbar";
 
 const HeroSection = lazy(() => import('@/components/HeroSection/HeroSection'));
@@ -17,18 +17,24 @@ const Home: FC = () => {
             <Navbar/>
             <Suspense fallback={<div>Loading...</div>}>
                 {showHeroSection && <HeroSection/>}
-                <InView as="div"  id="aboutus">
-                    <AboutUs/>
-                </InView>
-                <InView as="div" onChange={(inView) => setShowHeroSection(!inView)} id="work">
-                    <ScrollComponent/>
-                </InView>
-                <InView as="div" id="whatwedo">
-                    <WhatWeDo/>
-                </InView>
-                <div id="whoweare">
-                    <WhoWeAre/>
-                </div>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <div id="aboutus">
+                        <AboutUs/>
+                    </div>
+                </Suspense>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <InView as="div" onChange={(inView) => setShowHeroSection(!inView)}>
+                        <div id="work">
+                            <ScrollComponent/>
+                        </div>
+                        <div id="whatwedo">
+                            <WhatWeDo/>
+                        </div>
+                        <div id="whoweare">
+                            <WhoWeAre/>
+                        </div>
+                    </InView>
+                </Suspense>
             </Suspense>
         </main>
     );
