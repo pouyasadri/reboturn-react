@@ -19,10 +19,9 @@ const ServiceCard: FC<ServiceCardProps> = memo(function ServiceCard({image, titl
             >
                 <Image
                     src={image}
-                    layout="fill"
+                    fill={true}
                     alt={`${title}-image`}
-                    objectFit="cover"
-                    className="transition-transform duration-300 group-hover:scale-110 rounded-xl"
+                    className="object-cover transition-transform duration-300 group-hover:scale-110 rounded-xl"
                 />
             </div>
             <div className="my-5">
