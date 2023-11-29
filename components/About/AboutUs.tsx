@@ -1,12 +1,10 @@
 // components/About/AboutUs.tsx
-import {FC, useCallback, memo} from 'react';
-import HighlightedText from './HighlightedText';
+import {FC, memo} from 'react';
+import dynamic from "next/dynamic";
 
+const HighlightedText = dynamic(() => import('@/components/About/HighlightedText'));
+const ContactButton = dynamic(() => import('@/components/About/ContactButton'));
 const AboutUs: FC = memo(function AboutUs() {
-    const handleContactClick = useCallback(() => {
-        // Handle the click event, e.g., navigate to the contact page
-    }, []);
-
     return (
             <section className="max-sm:my-4 lg:h-screen mb-10 flex justify-center items-center">
                 <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl max-sm:p-5 p-10">
@@ -20,10 +18,7 @@ const AboutUs: FC = memo(function AboutUs() {
                             click is a step toward a more <HighlightedText>extraordinary</HighlightedText> you.
                         </div>
                     </div>
-                    <button onClick={handleContactClick}
-                            className="w-30 max-xm:mt-2 mt-5 font-medium shadow-gray-500 max-sm:text-base text-xl rounded-full text-center bg-black text-white max-sm:p-2.5 p-5">
-                        Contact us
-                    </button>
+                    <ContactButton/>
                 </div>
             </section>
     );
