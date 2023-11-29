@@ -26,7 +26,7 @@ const HighlightedText: FC<HighlightedTextProps> = memo(function HighlightedText(
             inViewRef(el);
             ref.current = el;
         }}
-                     className="relative max-md:px-1.5 max-sm:px-1 px-2 max-sm:py-0.5 py-1 rounded-full font-semibold overflow-hidden inline-flex align-middle">
+                     className="relative max-md:px-1.5 max-sm:px-1 px-2 max-sm:py-0 py-1 rounded-full font-semibold overflow-hidden inline-flex align-middle">
             <motion.div
                 initial={{ x: '-100%' }}
                 animate={{ x: inView ? '0%' : '-100%' }}

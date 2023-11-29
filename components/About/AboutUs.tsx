@@ -6,21 +6,30 @@ const HighlightedText = dynamic(() => import('@/components/About/HighlightedText
 const ContactButton = dynamic(() => import('@/components/About/ContactButton'));
 const AboutUs: FC = memo(function AboutUs() {
     return (
-            <section className="max-sm:my-4 lg:h-screen mb-10 flex justify-center items-center">
-                <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl max-sm:p-5 p-10">
-                    <div className="text-black font-medium max-sm:text-xl max-md:text-2xl text-3xl leading-relaxed">
-                        <div>At Reboturn, we&apos;re changing the game in <HighlightedText>fashion</HighlightedText>.
-                        </div>
-                        <div>Experience style, simplicity, and sustainability
-                            like <HighlightedText>never</HighlightedText> before.
-                        </div>
-                        <div>Join us in shaping the future of <HighlightedText>shopping</HighlightedText> – where every
-                            click is a step toward a more <HighlightedText>extraordinary</HighlightedText> you.
-                        </div>
+        <section className="max-sm:my-4 lg:h-screen mb-10 flex justify-center items-center">
+            <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl max-sm:p-5 p-10">
+                <div className="text-black text-xl md:text-2xl lg:text-3xl leading-relaxed">
+                    <div>
+                        Reboturn stands out as a <HighlightedText>groundbreaking</HighlightedText> innovation in the
+                        e-commerce landscape.
                     </div>
-                    <ContactButton/>
+                    Our business model
+                    ingeniously merges <HighlightedText>economic</HighlightedText> benefits
+                    with <HighlightedText>ecological</HighlightedText> initiatives, aiming to generate profit while
+                    reinforcing the market&apos;s ecological aspect.
+                    <div>
+                    </div>
+                    <div>By fostering <HighlightedText>entrepreneurial</HighlightedText> spirit and creating
+                        meaningful <HighlightedText>employment</HighlightedText> opportunities, Reboturn is more than an
+                        e-commerce platform; it is a
+                        <HighlightedText>future-forward</HighlightedText> model for sustainable urban living, blending
+                        efficiency, community engagement, and
+                        environmental respect.
+                    </div>
                 </div>
-            </section>
+                <ContactButton/>
+            </div>
+        </section>
     );
 });
 
