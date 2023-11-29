@@ -10,7 +10,7 @@ const WhoWeAre: FC = memo(function WhoWeAre() {
             <Member name="SINA GANJI" role="CEO & Founder" image={"/Sina.png"}/>
             <Member name="SEYEDPOUYA SADRIFARD" role="CTO & Co-Founder" image={"/Pouya.jpeg"}/>
             <Member name="DANIAL POUR ARAB" role="CTO & Co-Founder" image={"/Danial.jpg"}/>
-            <Member name="MITRA POURARAB" role="Designer" image={"/Mitra.png"}/>
+            <Member name="MITRA POURARAB" role="Graphic Designer" image={"/Mitra.png"}/>
         </div>
     );
 });
