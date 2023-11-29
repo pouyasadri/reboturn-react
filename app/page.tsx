@@ -21,9 +21,9 @@ const Home: FC = () => {
             <div id="work">
                 <ScrollComponent/>
             </div>
-            <div id="whatwedo">
-                <WhatWeDo/>
-            </div>
+            {/*<div id="whatwedo">*/}
+            {/*    <WhatWeDo/>*/}
+            {/*</div>*/}
             <div id="whoweare">
                 <WhoWeAre/>
             </div>

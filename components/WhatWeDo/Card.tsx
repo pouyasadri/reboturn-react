@@ -14,7 +14,7 @@ interface CardProps {
 const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, left = "0"}) {
     return (
         <motion.div style={{x, y, left}} className={"relative h-30"}>
-            <div className={"left-[60vw]  w-[22rem] h-[30rem]"}
+            <div className={"w-[22rem] h-[30rem]"}
                  style={{
                      filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
                      clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
