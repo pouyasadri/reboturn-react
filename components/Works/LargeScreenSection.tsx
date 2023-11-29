@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 const ServiceSection = dynamic(() => import('@/components/Works/ServiceSection'));
 const LargeScreenSection: FC = memo(function LargeScreenSection ()  {
     return (
-        <section className={"hidden lg:flex my-[10rem]"}>
+        <section className={"hidden lg:flex "}>
             <ParallaxProvider>
                 <div className="text-black top-0">
                     <ServiceSection

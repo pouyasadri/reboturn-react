@@ -6,7 +6,7 @@ const ServiceCard = dynamic(() => import('@/components/Works/ServiceCard'));
 
 const SmallScreenSection: FC = memo(function SmallScreenSection() {
     return (
-        <section className={"lg:hidden overflow-x-hidden"}>
+        <section className={"lg:hidden"}>
             <ServiceCard
                 image="/Service1.png"
                 title="Seamless Online Shopping Experience"

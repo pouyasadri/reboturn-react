@@ -6,7 +6,7 @@ const HighlightedText = dynamic(() => import('@/components/About/HighlightedText
 const ContactButton = dynamic(() => import('@/components/About/ContactButton'));
 const AboutUs: FC = memo(function AboutUs() {
     return (
-        <section className="max-sm:my-4 lg:h-screen mb-10 flex justify-center items-center">
+        <section className="max-sm:my-4 lg:h-screen flex justify-center items-center">
             <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl max-sm:p-5 p-10">
                 <div className="text-black text-xl md:text-2xl lg:text-3xl leading-relaxed">
                     <div>
