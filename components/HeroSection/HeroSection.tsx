@@ -13,7 +13,7 @@ const Rig = dynamic(()=>import('./Rig'));
 
 // Define constants for cleaner code and better performance
 
-const BACKGROUND_COLOR = "#c0c0c0";
+const BACKGROUND_COLOR = "#F2F2F2";
 const CAMERA_POSITION: [number, number, number] = [0, 10, 0];
 const SPOTLIGHT_POSITION: [number, number, number] = [20, 20, 10];
 const TITLE_POSITION: [number, number, number] = [-1, 0, -10];
