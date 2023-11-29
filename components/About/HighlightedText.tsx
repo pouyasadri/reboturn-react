@@ -7,7 +7,7 @@ interface HighlightedTextProps {
     children: ReactNode;
 }
 
-const HighlightedText: FC<HighlightedTextProps> = memo(({ children }) => {
+const HighlightedText: FC<HighlightedTextProps> = memo(function HighlightedText({ children })  {
     const { ref: inViewRef, inView } = useInView({ triggerOnce: true });
     const ref = useRef<HTMLElement | null>(null);
 
