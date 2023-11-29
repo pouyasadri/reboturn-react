@@ -13,7 +13,7 @@ const LogoSection: FC = memo(function LogoSection() {
         >
             <div className={"bg-transparent mt-4 ml-4"}>
                 <a className={"m-0"} href={"/"}>
-                    <Image src="/logo.png" alt="ReboTurn Log" width={400}
+                    <Image src="/logo.PNG" alt="ReboTurn Log" width={400}
                            className={"max-md:w-[250px] max-sm:[200px]"} height={100} priority={true}/>
                 </a>
             </div>
