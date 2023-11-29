@@ -1,9 +1,9 @@
-import {Fragment} from "react";
+import {Fragment, memo} from "react";
 import dynamic from "next/dynamic";
 
 const LogoSection = dynamic(() => import('@/components/Navbar/LogoSection'));
 const NavItems = dynamic(() => import('@/components/Navbar/NavItems'));
-const Navbar = () => {
+const Navbar = memo(function Navbar() {
     return (
         <Fragment>
             <LogoSection/>
@@ -11,6 +11,6 @@ const Navbar = () => {
 
         </Fragment>
     );
-};
+});
 
 export default Navbar;
