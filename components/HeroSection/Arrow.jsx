@@ -1,6 +1,6 @@
 // Arrow component with 3D model
 import {memo, useEffect, useMemo, useState} from "react";
-import {MeshTransmissionMaterial, useGLTF} from "@react-three/drei";
+import {MeshTransmissionMaterial, useGLTF,useTexture} from "@react-three/drei";
 import {useLoader} from "@react-three/fiber";
 import {debounce} from "lodash";
 import * as THREE from "three";
@@ -9,7 +9,7 @@ const TEXTURE_PATH = 'texture.png';
 
 const Arrow = memo(function Arrow() {
     const {nodes} = useGLTF(ARROW_MODEL_PATH);
-    const texture = useLoader(THREE.TextureLoader, TEXTURE_PATH);
+    const texture = useTexture(TEXTURE_PATH);
     const [scale, setScale] = useState(getScale);
     const updateScale = useMemo(() => debounce(() => setScale(getScale()), 300), []);
 
