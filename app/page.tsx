@@ -1,5 +1,5 @@
 "use client"
-import { FC } from 'react';
+import {FC} from 'react';
 import dynamic from 'next/dynamic';
 import HeroSection from "@/components/HeroSection/HeroSection";
 // import Navbar from "@/components/Navbar/Navbar";
@@ -13,11 +13,14 @@ const WhoWeAre = dynamic(() => import("@/components/WhoWeAre/WhoWeAre"));
 const Home: FC = () => {
     return (
         <main className="relative w-screen h-screen ">
-            {/*<Navbar/>*/}
-            {/*<HeroSection/>*/}
-            {/*<div id="aboutus">*/}
-            {/*    <AboutUs/>*/}
-            {/*</div>*/}
+            <Navbar/>
+            <HeroSection/>
+            <div id="aboutus">
+                <AboutUs/>
+            </div>
+            <div id="works">
+                <ScrollComponent/>
+            </div>
             <div id="whatwedo">
                 <WhatWeDo/>
             </div>

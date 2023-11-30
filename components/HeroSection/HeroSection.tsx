@@ -9,14 +9,14 @@ import Arrow from "@/components/HeroSection/Arrow";
 
 const Caption = dynamic(() => import('./Caption'));
 const Title = dynamic(() => import('./Title'));
-const Rig = dynamic(()=>import('./Rig'));
+const Rig = dynamic(() => import('./Rig'));
 
 // Define constants for cleaner code and better performance
 
-const BACKGROUND_COLOR = "#b0b0b0";
+const BACKGROUND_COLOR = "#F2F2F2";
 const CAMERA_POSITION: [number, number, number] = [0, 10, 0];
 const SPOTLIGHT_POSITION: [number, number, number] = [20, 20, 10];
- const TITLE_POSITION: [number, number, number] = [-1, 0, -10];
+const TITLE_POSITION: [number, number, number] = [-1, 0, -10];
 const CAPTION_POSITION: [number, number, number] = [-1, -4, -10];
 const SHADOWS_POSITION: [number, number, number] = [0, -7.5, 0];
 // Main HeroSection component
@@ -25,8 +25,8 @@ const HeroSection = memo(function HeroSection() {
         <Canvas shadows camera={{position: CAMERA_POSITION, fov: 50}}>
             <color attach="background" args={[BACKGROUND_COLOR]}/>
             <spotLight position={SPOTLIGHT_POSITION} penumbra={1} castShadow={true} angle={0.2}/>
-            {/*<Title position={TITLE_POSITION}/>*/}
-            {/*<Caption position={CAPTION_POSITION}/>*/}
+            <Title position={TITLE_POSITION}/>
+            <Caption position={CAPTION_POSITION}/>
             <Center>
                 <Arrow/>
             </Center>
