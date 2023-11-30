@@ -1,15 +1,13 @@
 import {Canvas} from '@react-three/fiber';
-import dynamic from 'next/dynamic';
 import {
     ContactShadows,
     Center,
 } from "@react-three/drei"
 import {memo} from 'react';
 import Arrow from "@/components/HeroSection/Arrow";
-
-const Caption = dynamic(() => import('./Caption'));
-const Title = dynamic(() => import('./Title'));
-const Rig = dynamic(() => import('./Rig'));
+import Title from "@/components/HeroSection/Title";
+import Caption from "@/components/HeroSection/Caption";
+import Rig from "@/components/HeroSection/Rig";
 
 // Define constants for cleaner code and better performance
 
