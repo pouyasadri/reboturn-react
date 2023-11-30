@@ -8,7 +8,7 @@ const AboutUs: FC = memo(function AboutUs() {
     return (
         <section className="max-sm:my-4 lg:h-screen flex justify-center items-center">
             <div className="w-[90%] mx-auto shadow-2xl bg-white rounded-2xl max-sm:p-5 p-10">
-                <div className="text-black text-xl md:text-2xl lg:text-3xl leading-relaxed">
+                <div className="text-black text-xl md:text-2xl lg:text-3xl leading-relaxed text-justify">
                     <div>
                         Reboturn stands out as a <HighlightedText>groundbreaking</HighlightedText> innovation in the
                         e-commerce landscape.
