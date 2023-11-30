@@ -74,15 +74,14 @@ const WhatWeDo: FC = () => {
     ], [firstCardX, firstCardY, firstCardEndY, secondCardX, secondCardY, secondCardEndY, thirdCardX, thirdCardY, thirdCardEndY, fourthCardX, fourthCardY, fourthCardEndY, isScroll]);
 
     return (
-        <section ref={targetRef} className="w-[90%] mx-auto flex relative h-[300vh] ">
-            <div className={"sticky top-[10%] flex h-screen justify-evenly items-center"}>
+        <section ref={targetRef} className="w-[90%] mx-auto lg:my-20 flex h-[300vh]">
+            <div className={"sticky lg:top-[10%] lg:flex h-screen lg:justify-evenly lg:items-center"}>
                 {/*main text*/}
-
                 <div>
-                    <motion.div style={{y: textY}} className="w-full lg:w-1/2 h-screen p-2.5 lg:p-5">
+                    <motion.div style={{y: textY}} className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Behind the scene of Reboturn</h1>
-                        <p className=" text-lg text-black font-light mb-2.5 lg:mb-5">
+                        <p className="text-lg text-gray-700 my-2.5 lg:my-5">
                             Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
                             the
                             convenience of online shopping with the tactile feel of in-store purchases. Users can
@@ -93,12 +92,11 @@ const WhatWeDo: FC = () => {
                             keep.
                         </p>
                         <button
-                            className="text-sm mt-2.5 lg:mt-5 relative overflow-hidden border border-black bg-black p-2.5 lg:p-5 text-white lg:text-xl rounded-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#9ae1ef] before:transition-all before:duration-200 hover:text-black hover:border-[#9ae1ef] hover:before:left-0 hover:before:w-full">
+                            className="text-base font-semibold mt-2.5 lg:mt-5 relative overflow-hidden border border-black bg-black p-2.5 lg:p-5 text-white lg:text-xl rounded-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#9ae1ef] before:transition-all before:duration-200 hover:text-black hover:border-[#9ae1ef] hover:before:left-0 hover:before:w-full">
                             <span className="relative z-10">Discover more</span></button>
-
                     </motion.div>
                 </div>
-                <div className={`w-full lg:w-1/2 lg:p-10 text-black h-screen`}>
+                <div className={`w-full max-md:mx-auto lg:w-1/2 lg:p-10 text-black h-screen`}>
                     {cards.map((card, index) => (
                         <Card key={index} {...card} />
                     ))}

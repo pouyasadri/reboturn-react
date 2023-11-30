@@ -13,17 +13,14 @@ const WhoWeAre = dynamic(() => import("@/components/WhoWeAre/WhoWeAre"));
 const Home: FC = () => {
     return (
         <main className="relative w-screen h-screen ">
-            <Navbar/>
-            <HeroSection/>
-            <div id="aboutus">
-                <AboutUs/>
-            </div>
-            <div id="work">
-                <ScrollComponent/>
-            </div>
-            {/*<div id="whatwedo">*/}
-            {/*    <WhatWeDo/>*/}
+            {/*<Navbar/>*/}
+            {/*<HeroSection/>*/}
+            {/*<div id="aboutus">*/}
+            {/*    <AboutUs/>*/}
             {/*</div>*/}
+            <div id="whatwedo">
+                <WhatWeDo/>
+            </div>
             <div id="whoweare">
                 <WhoWeAre/>
             </div>
