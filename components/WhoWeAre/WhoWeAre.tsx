@@ -9,7 +9,7 @@ const WhoWeAre: FC = memo(function WhoWeAre() {
         <div className={"w-[90%] mx-auto h-screen lg:mt-20 mt-10 text-black"}>
             <Member name="SINA GANJI" role="CEO & Founder" image={"/Sina.jpg"}/>
             <Member name="SEYEDPOUYA SADRIFARD" role="CTO & Co-Founder" image={"/Pouya.jpeg"}/>
-            <Member name="DANIAL POUR ARAB" role="CTO & Co-Founder" image={"/Danial.JPG"}/>
+            <Member name="DANIAL POUR ARAB" role="CTO & Co-Founder" image={"/Danial.jpg"}/>
             <Member name="MITRA POURARAB" role="Graphic Designer" image={"/Mitra.jpg"}/>
         </div>
     );
