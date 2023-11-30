@@ -12,19 +12,17 @@ const AboutUs: FC = memo(function AboutUs() {
                     <div>
                         Reboturn stands out as a <HighlightedText>groundbreaking</HighlightedText> innovation in the
                         e-commerce landscape.
-                    </div>
-                    Our business model
-                    ingeniously merges <HighlightedText>economic</HighlightedText> benefits
-                    with <HighlightedText>ecological</HighlightedText> initiatives, aiming to generate profit while
-                    reinforcing the market&apos;s ecological aspect.
-                    <div>
-                    </div>
-                    <div>By fostering <HighlightedText>entrepreneurial</HighlightedText> spirit and creating
+                        Our business model
+                        ingeniously merges <HighlightedText>economic</HighlightedText> benefits
+                        with <HighlightedText>ecological</HighlightedText> initiatives, aiming to generate profit while
+                        reinforcing the market&apos;s ecological aspect.
+                        By fostering <HighlightedText>entrepreneurial</HighlightedText> spirit and creating
                         meaningful <HighlightedText>employment</HighlightedText> opportunities, Reboturn is more than an
                         e-commerce platform; it is a
                         <HighlightedText>future-forward</HighlightedText> model for sustainable urban living, blending
                         efficiency, community engagement, and
                         environmental respect.
+
                     </div>
                 </div>
                 <ContactButton/>
