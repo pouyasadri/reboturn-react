@@ -41,14 +41,14 @@ const WhatWeDo: FC = () => {
 
     const cards = useMemo(() => [
         {
-            src: "/AI.jpg",
+            src: "/AI.webp",
             x: firstCardX,
             y: isScroll ? firstCardEndY : firstCardY,
             title: "AI-Powered Shopping Assistant",
             description: "Our platform integrates an advanced AI assistant, offering personalized recommendations and interactive advice, tailored to individual preferences."
         },
         {
-            src: "/map.jpg",
+            src: "/map.webp",
             x: secondCardX,
             y: isScroll ? secondCardEndY : secondCardY,
             title: "Optimized Delivery Algorithm",
@@ -56,7 +56,7 @@ const WhatWeDo: FC = () => {
             left: "-4rem"
         },
         {
-            src: "/UI.jpg",
+            src: "/UI.webp",
             x: thirdCardX,
             y: isScroll ? thirdCardEndY : thirdCardY,
             title: "User-Friendly Interfaces",
@@ -64,7 +64,7 @@ const WhatWeDo: FC = () => {
             left: "1rem"
         },
         {
-            src: "/logistic.jpg",
+            src: "/logistic.webp",
             x: fourthCardX,
             y: isScroll ? fourthCardEndY : fourthCardY,
             title: "Reboturn’s Logistic Innovation",
