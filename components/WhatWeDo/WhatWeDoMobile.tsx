@@ -63,7 +63,7 @@ const WhatWeDoMobile: FC = () => {
                         keep.
                     </p>
                 </div>
-                <div className={"mt-2 grid place-items-center"}>
+                <div className={"w-full mt-2  text-black relative"}>
                     {cards.map((card, index) => (
                         <CardMobile key={index} {...card} />
                     ))}

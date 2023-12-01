@@ -12,7 +12,7 @@ interface CardProps {
 
 const CardMobile: FC<CardProps> = ({src, y, title, description, left = "0"}) => {
     return (
-        <motion.div style={{y, left}} className={"absolute  h-10"}>
+        <motion.div style={{y, left}} className={"absolute  h-30"}>
             <div className={"w-[18rem] h-[23rem] "}
                  style={{
                      filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
