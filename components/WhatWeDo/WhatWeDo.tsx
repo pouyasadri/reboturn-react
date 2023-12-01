@@ -7,22 +7,22 @@ const WhatWeDo: FC = () => {
     const targetRef = useRef(null);
     const {scrollYProgress} = useScroll({target: targetRef});
 
-    const firstCardY = useTransform(scrollYProgress, [0, 0.15], ["50rem", "0rem"]);
-    const secondCardY = useTransform(scrollYProgress, [0.15, 0.3], ["21.5rem", "-28.5rem"]);
-    const thirdCardY = useTransform(scrollYProgress, [0.3, 0.45], ["-7rem", "-57rem"]);
-    const fourthCardY = useTransform(scrollYProgress, [0.45, 0.6], ["-35.5rem", "-85.5rem"]);
+    const firstCardY = useTransform(scrollYProgress, [0, 0.15], ["100%", "0rem"]);
+    const secondCardY = useTransform(scrollYProgress, [0.15, 0.3], ["100%", "1.6rem"]);
+    const thirdCardY = useTransform(scrollYProgress, [0.3, 0.45], ["100%", "3.2rem"]);
+    const fourthCardY = useTransform(scrollYProgress, [0.45, 0.6], ["100%", "4.8rem"]);
 
     const textY = useTransform(scrollYProgress, [0.65, 0.8], ["0", "-50rem"]);
 
-    const firstCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-15.8rem"]);
-    const secondCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-34rem"]);
-    const thirdCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "5.5rem"]);
-    const fourthCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "54.2rem"]);
+    const firstCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-98%"]);
+    const secondCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-182%"]);
+    const thirdCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "0%"]);
+    const fourthCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-274%"]);
 
-    const firstCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["0", "2.5rem"]);
-    const secondCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["-28.5rem", "-22.5rem"]);
-    const thirdCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["-57rem", "-51rem"]);
-    const fourthCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["-85.5rem", "-79.5rem"]);
+    const firstCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["0", "3rem"]);
+    const secondCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["1.6rem", "3rem"]);
+    const thirdCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["3.2rem", "3rem"]);
+    const fourthCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["4.8rem", "3rem"]);
 
     const [isScroll, setIsScroll] = useState(false);
     useEffect(() => {
@@ -53,7 +53,7 @@ const WhatWeDo: FC = () => {
             y: isScroll ? secondCardEndY : secondCardY,
             title: "Optimized Delivery Algorithm",
             description: "The platform uses an advanced algorithm for effective delivery management. This algorithm considers the storage and energy capacity of bicycles and customers' preferred delivery times, incorporating tools like Google's OR-Tools and OSRM for optimal route planning.",
-            left: "-4rem"
+            left: "-4rem",
         },
         {
             src: "/UI.webp",
@@ -81,7 +81,7 @@ const WhatWeDo: FC = () => {
                     <motion.div style={{y: textY}} className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Behind the scene of Reboturn</h1>
-                        <p className="text-lg text-gray-700 my-2.5 lg:my-5">
+                        <p className="text-lg text-justify text-gray-700 my-2.5 lg:my-5">
                             Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
                             the
                             convenience of online shopping with the tactile feel of in-store purchases. Users can
@@ -91,12 +91,9 @@ const WhatWeDo: FC = () => {
                             to
                             keep.
                         </p>
-                        <button
-                            className="text-base font-semibold mt-2.5 lg:mt-5 relative overflow-hidden border border-black bg-black p-2.5 lg:p-5 text-white lg:text-xl rounded-xl transition-all before:absolute before:bottom-0 before:left-0 before:top-0 before:z-0 before:h-full before:w-0 before:bg-[#9ae1ef] before:transition-all before:duration-200 hover:text-black hover:border-[#9ae1ef] hover:before:left-0 hover:before:w-full">
-                            <span className="relative z-10">Discover more</span></button>
                     </motion.div>
                 </div>
-                <div className={`w-full max-md:mx-auto lg:w-1/2 lg:p-10 text-black h-screen`}>
+                <div className={`w-full max-md:mx-auto lg:w-1/2 lg:p-10 text-black h-screen relative`}>
                     {cards.map((card, index) => (
                         <Card key={index} {...card} />
                     ))}

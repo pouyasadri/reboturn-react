@@ -9,13 +9,14 @@ interface CardProps {
     title: string;
     description: string;
     left?: string;
+    top?: string;
 }
 
-const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, left = "0"}) {
+const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, left = "0", top = "0"}) {
     return (
-        <motion.div style={{x, y, left}} className={"relative h-30"}>
+        <motion.div style={{x, y, left}} className={"absolute h-30 h-20"}>
             <div
-                className={"lg:w-[22rem] lg:h-[30rem] 2xl:w-[33rem] 2xl:h-[40rem] w-[70vw] h-[50vh]"}
+                className={"w-[22rem] h-[30rem]"}
                 style={{
                     filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
                     clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
@@ -28,12 +29,12 @@ const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, l
                 }}
                      className={"absolute z-10 bg-gray-200 w-full h-full"}>
                     <div
-                        className={"lg:mt-5 mt-3 lg:px-5 px-3 leading-relaxed lg:w-[82%] w-[80%] text-sm font-medium"}>{description}</div>
+                        className={"mt-5 px-5 text-justify leading-relaxed w-[82%] text-sm font-light"}>{description}</div>
                     <div
-                        className={"lg:w-[35rem] w-[111vw] top-[55vw] absolute border-b-[1px] border-black font-semibold lg:text-2xl text-lg lg:top-[16vw]"}
+                        className={"w-[35rem] absolute border-b-[1px] border-black font-semibold text-2xl top-[16rem] 2xl:top-[13rem]"}
                         style={{transform: 'rotate(90deg) translateY(-100%)'}}>
                     <span
-                        className={"absolute ml-[30vw] lg:ml-[10vw] -top-[10vw] lg:-top-[3vw]"}>{title}</span>
+                        className={"absolute  text-center ml-28 2xl:ml-[10rem] -top-[3rem]"}>{title}</span>
                     </div>
 
                 </div>
@@ -42,7 +43,7 @@ const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, l
             <div>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Image src={src} alt={""}
-                           className={"top-[28vh] rounded-3xl absolute z-20 lg:left-[0.75vw] lg:w-[18.5vw] max-sm:w-[55vw] max-sm:h-[30vh] shadow-2xl shadow-black object-cover lg:h-[38vh]"}
+                           className={"top-[15rem] rounded-3xl absolute z-20 left-[0.75rem] w-[16.5rem] shadow-2xl shadow-black object-cover h-[20rem]"}
                            width={500} height={500}/>
                 </Suspense>
             </div>

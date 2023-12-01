@@ -30,7 +30,9 @@ body {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 a {
   pointer-events: all;
   cursor: pointer;
