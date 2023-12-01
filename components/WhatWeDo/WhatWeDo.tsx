@@ -7,10 +7,10 @@ const WhatWeDo: FC = () => {
     const targetRef = useRef(null);
     const {scrollYProgress} = useScroll({target: targetRef});
 
-    const firstCardY = useTransform(scrollYProgress, [0, 0.15], ["100%", "0rem"]);
-    const secondCardY = useTransform(scrollYProgress, [0.15, 0.3], ["100%", "1.6rem"]);
-    const thirdCardY = useTransform(scrollYProgress, [0.3, 0.45], ["100%", "3.2rem"]);
-    const fourthCardY = useTransform(scrollYProgress, [0.45, 0.6], ["100%", "4.8rem"]);
+    const firstCardY = useTransform(scrollYProgress, [0, 0.15], ["90%", "0rem"]);
+    const secondCardY = useTransform(scrollYProgress, [0.15, 0.3], ["90%", "1.6rem"]);
+    const thirdCardY = useTransform(scrollYProgress, [0.3, 0.45], ["90%", "3.2rem"]);
+    const fourthCardY = useTransform(scrollYProgress, [0.45, 0.6], ["90%", "4.8rem"]);
 
     const textY = useTransform(scrollYProgress, [0.65, 0.8], ["0", "-50rem"]);
 
@@ -74,11 +74,12 @@ const WhatWeDo: FC = () => {
     ], [firstCardX, firstCardY, firstCardEndY, secondCardX, secondCardY, secondCardEndY, thirdCardX, thirdCardY, thirdCardEndY, fourthCardX, fourthCardY, fourthCardEndY, isScroll]);
 
     return (
-        <section ref={targetRef} className="w-[90%] mx-auto lg:my-20 flex h-[300vh]">
-            <div className={"sticky lg:top-[10%] lg:flex h-screen lg:justify-evenly lg:items-center"}>
+        <section ref={targetRef} className="w-[90%] mx-auto my-20 flex lg:h-[300vh]">
+            <div className={"sticky top-[10%] flex h-screen justify-evenly items-center"}>
                 {/*main text*/}
                 <div>
-                    <motion.div style={{y: textY}} className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
+                    <motion.div style={{y: textY}}
+                                className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Behind the scene of Reboturn</h1>
                         <p className="text-lg text-justify text-gray-700 my-2.5 lg:my-5">
@@ -93,7 +94,7 @@ const WhatWeDo: FC = () => {
                         </p>
                     </motion.div>
                 </div>
-                <div className={`w-full max-md:mx-auto lg:w-1/2 lg:p-10 text-black h-screen relative`}>
+                <div className={`w-full -top-16 max-md:mx-auto lg:w-1/2 lg:p-10 h-screen text-black relative`}>
                     {cards.map((card, index) => (
                         <Card key={index} {...card} />
                     ))}

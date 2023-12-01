@@ -9,12 +9,11 @@ interface CardProps {
     title: string;
     description: string;
     left?: string;
-    top?: string;
 }
 
-const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, left = "0", top = "0"}) {
+const Card: FC<CardProps> = memo(function Card({src, x, y, title, description, left = "0"}) {
     return (
-        <motion.div style={{x, y, left}} className={"absolute h-30 h-20"}>
+        <motion.div style={{x, y, left}} className={"absolute h-30"}>
             <div
                 className={"w-[22rem] h-[30rem]"}
                 style={{
