@@ -39,7 +39,7 @@ const CardMobile: FC<CardProps> = ({src, y, title, description, left = "0"}) => 
                 <Suspense fallback={<div>Loading...</div>}>
                     <Image src={src} alt={""}
                            className={"top-[10rem] rounded-3xl absolute z-20 left-[0.75rem] w-[13.5rem] shadow-2xl shadow-black object-cover h-[16rem]"}
-                           width={500} height={500}/>
+                           width={10} height={10}/>
                 </Suspense>
             </div>
         </motion.div>
