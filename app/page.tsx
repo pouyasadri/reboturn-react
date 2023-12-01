@@ -10,12 +10,17 @@ import {debounce} from "lodash";
 const AboutUs = dynamic(() => import('@/components/About/AboutUs'));
 const ScrollComponent = dynamic(() => import('@/components/Works/Works'));
 const WhoWeAre = dynamic(() => import("@/components/WhoWeAre/WhoWeAre"));
-const WhatWeDo = dynamic(() => import('@/components/WhatWeDo/WhatWeDo'), {ssr: false, loading: () => <div>Loading...</div>});
-const WhatWeDoMobile = dynamic(() => import('@/components/WhatWeDo/WhatWeDoMobile'), {ssr: false, loading: () => <div>Loading...</div>});
+const WhatWeDo = dynamic(() => import('@/components/WhatWeDo/WhatWeDo'), {
+    ssr: false, loading: () => <div>Loading...</div>
+});
+const WhatWeDoMobile = dynamic(() => import('@/components/WhatWeDo/WhatWeDoMobile'), {
+    ssr: false, loading: () => <div>Loading...</div>
+});
 const Home: FC = () => {
     const [isMobile, setIsMobile] = useState(false);
-    const updateScreenSize = useCallback(debounce(() => setIsMobile(window.innerWidth <= 786), 300), []);
-
+    const updateScreenSize = useCallback(debounce(() => {
+        setIsMobile(window.innerWidth <= 786);
+    }, 300), []);
     useEffect(() => {
         window.addEventListener('resize', updateScreenSize);
         updateScreenSize();
@@ -35,7 +40,7 @@ const Home: FC = () => {
                 <ScrollComponent/>
             </div>
             <div id="whatwedo">
-                {isMobile ?  <WhatWeDoMobile/> : <WhatWeDo/>}
+                {isMobile ? <WhatWeDoMobile/> : <WhatWeDo/>}
             </div>
             <div id="whoweare">
                 <WhoWeAre/>
