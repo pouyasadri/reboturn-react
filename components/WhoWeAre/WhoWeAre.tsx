@@ -6,7 +6,7 @@ const Member = dynamic(() => import('./Member'));
 
 const WhoWeAre: FC = memo(function WhoWeAre() {
     return (
-        <div className={"w-[90%] mx-auto h-screen lg:mt-20 mt-10 text-black"}>
+        <div className={"w-[90%] mx-auto h-screen lg:mt-20 mt-52 text-black"}>
             <Member name="SINA GANJI" role="CEO & Founder" image={"/Sina.webp"}
                     text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto libero numquam officia praesentium quidem reprehenderit sit velit! Aut, sit!"}
                     icons={["/linkedin.svg"]}
