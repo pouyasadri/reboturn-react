@@ -2,8 +2,8 @@
 import {FC} from 'react';
 import dynamic from 'next/dynamic';
 import HeroSection from "@/components/HeroSection/HeroSection";
-// import Navbar from "@/components/Navbar/Navbar";
-const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
+import Navbar from "@/components/Navbar/Navbar";
+// const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 // const HeroSection = dynamic(() => import('@/components/HeroSection/HeroSection'));
 const AboutUs = dynamic(() => import('@/components/About/AboutUs'));
 const ScrollComponent = dynamic(() => import('@/components/Works/Works'));
