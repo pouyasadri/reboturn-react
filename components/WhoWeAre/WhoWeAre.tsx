@@ -13,7 +13,7 @@ const WhoWeAre: FC = memo(function WhoWeAre() {
                     urls={["https://www.linkedin.com/in/sina-ganji-6a1084219/"]}
             />
             <Member name="SEYEDPOUYA SADRIFARD" role="CTO & Co-Founder" image={"/Pouya.webp"}
-                    text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet iusto libero numquam officia praesentium quidem reprehenderit sit velit! Aut, sit!"}
+                    text={"Self-taught full-stack engineer | Specialized in web, SaaS, and mobile application development | intrigued by algorithm optimization Cybersecurity and new technologies."}
                     icons={["/linkedin.svg", "/github.svg", "/youtube.svg", "/safari.svg"]}
                     urls={["https://www.linkedin.com/in/seyedpouya-sadri-fard/", "https://github.com/pouyasadri", "https://www.youtube.com/channel/UCrfihekLrBk9k1cdQjgXGnQ", "https://pouyasadri.com/"]}
             />
