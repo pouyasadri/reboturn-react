@@ -56,7 +56,7 @@ const NavMobile = memo(function NavMobile() {
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
                             exit={{opacity: 0}}
-                            transition={{duration: 0.2,delay:0.5}} id={"contactus"} className={"w-[90%] h-[40%] mx-auto rounded-2xl my-32 relative flex items-center justify-center"}>
+                            transition={{duration: 0.2,delay:0.5}} id={"contactus"} className={"w-[90%] h-[40%] mx-auto rounded-2xl my-10 relative flex items-center justify-center"}>
                             <video src={"/output.mp4"} className={"rounded-2xl w-[95%] mx-auto h-[90%] object-cover"} autoPlay loop
                                    muted playsInline/>
                             <div
