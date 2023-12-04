@@ -25,14 +25,12 @@ const NavMobile = memo(function NavMobile() {
                     >
                         <ul className="grid gap-2">
                             {NAV_ITEMS.map((item, index) => {
-
-
                                 return (
                                     <Link
                                         key={index}
                                         to={item.toLowerCase().replace(/\s/g, '')}
                                         smooth={true}
-                                        duration={500}>
+                                        duration={320 * (index + 1)}>
                                         <motion.li
                                             initial={{scale: 0, opacity: 0}}
                                             animate={{scale: 1, opacity: 1}}
@@ -54,7 +52,6 @@ const NavMobile = memo(function NavMobile() {
                                             >
                                                 <span
                                                     className="flex gap-1 md:text-3xl text-2xl font-semibold">{item}</span>
-                                                {/*<Icon className="text-xl" />*/}
                                             </a>
                                         </motion.li>
                                     </Link>

@@ -23,6 +23,7 @@ const HeroSection = memo(function HeroSection() {
         <Canvas shadows camera={{position: CAMERA_POSITION, fov: 50}}>
             <color attach="background" args={[BACKGROUND_COLOR]}/>
             <spotLight position={SPOTLIGHT_POSITION} penumbra={1} castShadow={true} angle={0.2}/>
+
             <Title position={TITLE_POSITION}/>
             <Caption position={CAPTION_POSITION}/>
             <Center>

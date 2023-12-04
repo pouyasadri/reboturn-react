@@ -22,7 +22,7 @@ const WhoWeAre: FC = memo(function WhoWeAre() {
                     icons={["linkedin.svg"]}
                     urls={["https://fr.linkedin.com/in/danialpourarab"]}
             />
-            <Member name="MITRA POURARAB" role="Graphic Designer" image={"/Mitra.webp"}
+            <Member name="MITRA POURARAB" role="Artist & Designer" image={"/Mitra.webp"}
                     text={"Licenced in Visual Arts with a Focus on Design | Specialist in Graphic Design, UI/UX Design, and Both 3D & 2D Digital Design | Deeply Intrigued by the Intersection of Art and Technology."}
                     icons={["linkedin.svg", "behance.svg", "web.png"]}
                     urls={["https://www.linkedin.com/in/mitrapourarab", "https://www.behance.net/mitrapourarab", "https://mitrapourarab.com/"]}
