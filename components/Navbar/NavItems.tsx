@@ -34,7 +34,13 @@ const NavItems: FC = memo(function NavItems() {
                 className={"lg:ml-2 max-md:ml-1 lg:flex bg-[#9ae1ef] hidden hover:bg-[#aee7f2] transition-all duration-200 lg:px-4 max-md:px-2 lg:py-2 max-md:py-1 lg:text-lg max-md:text-sm text-black font-light rounded-xl"}>
                 <div
                     className="lg:px-3 max-md:px-1 lg:py-2 max-md:py-0.5 cursor-pointer transition-colors duration-200 rounded-md">
+                    <Link
+                        key={5}
+                        to={"contactus"}
+                        smooth={true}
+                        duration={320 * 5}>
                     Contact us
+                    </Link>
                 </div>
             </div>
             <NavMobile/>

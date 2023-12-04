@@ -32,22 +32,25 @@ const Home: FC = () => {
         };
     }, [updateScreenSize]);
     return (
-        <main className="relative w-screen h-screen ">
+        <>
+            <main className="relative w-screen h-screen ">
 
-            <Navbar/>
-            <HeroSection/>
+                <Navbar/>
+                <HeroSection/>
 
-            <AboutUs/>
+                <AboutUs/>
 
 
-            <ScrollComponent/>
-            <div id="ourinnovations">
-                {isMobile ? <WhatWeDoMobile/> : <WhatWeDo/>}
-            </div>
+                <ScrollComponent/>
+                <div id="ourinnovations">
+                    {isMobile ? <WhatWeDoMobile/> : <WhatWeDo/>}
+                </div>
 
-            <WhoWeAre/>
-            <Footer/>
-        </main>
+                <WhoWeAre/>
+                <Footer/>
+            </main>
+
+        </>
     );
 };
 
