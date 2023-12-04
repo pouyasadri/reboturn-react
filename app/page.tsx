@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import HeroSection from "@/components/HeroSection/HeroSection";
 import Navbar from "@/components/Navbar/Navbar";
 import {debounce} from "lodash";
+import Head from "next/head";
 
 // const Navbar = dynamic(() => import('@/components/Navbar/Navbar'));
 // const HeroSection = dynamic(() => import('@/components/HeroSection/HeroSection'));
@@ -31,6 +32,7 @@ const Home: FC = () => {
     }, [updateScreenSize]);
     return (
         <main className="relative w-screen h-screen ">
+
             <Navbar/>
             <HeroSection/>
             <div id="aboutus">
