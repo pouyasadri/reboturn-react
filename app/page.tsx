@@ -35,18 +35,16 @@ const Home: FC = () => {
 
             <Navbar/>
             <HeroSection/>
-            <div id="aboutus">
-                <AboutUs/>
-            </div>
-            <div id="ourservices">
-                <ScrollComponent/>
-            </div>
+
+            <AboutUs/>
+
+
+            <ScrollComponent/>
             <div id="ourinnovations">
                 {isMobile ? <WhatWeDoMobile/> : <WhatWeDo/>}
             </div>
-            <div id="meettheteam">
-                <WhoWeAre/>
-            </div>
+
+            <WhoWeAre/>
         </main>
     );
 };

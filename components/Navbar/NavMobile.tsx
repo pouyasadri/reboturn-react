@@ -30,8 +30,11 @@ const NavMobile = memo(function NavMobile() {
                                         key={index}
                                         to={item.toLowerCase().replace(/\s/g, '')}
                                         smooth={true}
-                                        duration={320 * (index + 1)}>
-                                        <motion.li
+                                        duration={320 * (index + 1)}
+                                        onClick={() => setOpen((prev) => !prev)}
+                                        className="w-full px-5 py-3 mt-1 rounded-xl flex items-center justify-between p-5"
+                                    >
+                                        <motion.span
                                             initial={{scale: 0, opacity: 0}}
                                             animate={{scale: 1, opacity: 1}}
                                             transition={{
@@ -40,20 +43,11 @@ const NavMobile = memo(function NavMobile() {
                                                 damping: 20,
                                                 delay: 0.1 + index / 10,
                                             }}
-                                            key={item}
-                                            className="w-full p-[0.08rem] mt-1 rounded-xl "
+                                            className="flex gap-1 md:text-3xl text-2xl font-semibold"
                                         >
-                                            <a
-                                                onClick={() => setOpen((prev) => !prev)}
-                                                className={
-                                                    "flex items-center justify-between w-full p-5 rounded-xl "
-                                                }
-                                                href={"/"}
-                                            >
-                                                <span
-                                                    className="flex gap-1 md:text-3xl text-2xl font-semibold">{item}</span>
-                                            </a>
-                                        </motion.li>
+                                            {item}
+
+                                        </motion.span>
                                     </Link>
                                 );
                             })}

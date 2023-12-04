@@ -6,10 +6,10 @@ const SmallScreenSection = dynamic(() => import('@/components/Works/SmallScreenS
 
 const HorizontalScrollCarousel: FC = memo(function HorizontalScrollCarousel() {
     return (
-        <>
+        <div id={"ourservices"}>
             <LargeScreenSection/>
             <SmallScreenSection/>
-        </>
+        </div>
     )
 });
 
