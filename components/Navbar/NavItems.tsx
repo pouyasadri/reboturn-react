@@ -4,7 +4,7 @@ import {Link} from 'react-scroll';
 import {motion} from 'framer-motion';
 import dynamic from "next/dynamic";
 
-const NAV_ITEMS = ["Work", "Who we are", "What we do", "Insights"];
+const NAV_ITEMS = ["About Us", "Our Services", "Our Innovations", "Meet the Team"];
 const NavMobile = dynamic(() => import('@/components/Navbar/NavMobile'));
 
 const NavItems: FC = memo(function NavItems() {
@@ -23,7 +23,7 @@ const NavItems: FC = memo(function NavItems() {
                         key={index}
                         to={item.toLowerCase().replace(/\s/g, '')}
                         smooth={true}
-                        duration={500 * (index + 1)}
+                        duration={320 * (index + 1)}
                         className="lg:px-3 text-white max-md:px-1 lg:py-2 max-md:py-1 cursor-pointer hover:bg-gray-700 transition-colors duration-200 rounded-md"
                     >
                         {item}

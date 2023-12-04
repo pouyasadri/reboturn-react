@@ -81,16 +81,12 @@ const WhatWeDo: FC = () => {
                     <motion.div style={{y: textY}}
                                 className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
-                            Behind the scene of Reboturn</h1>
+                            Reboturn’s Innovative Edge</h1>
                         <p className="text-lg text-justify text-gray-700 my-2.5 lg:my-5">
-                            Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
-                            the
-                            convenience of online shopping with the tactile feel of in-store purchases. Users can
-                            explore an
-                            extensive catalog of international brands, try items at home, and only pay for what they
-                            choose
-                            to
-                            keep.
+                            Explore the essence of Reboturn’s innovation, where every breakthrough paves the way for
+                            towards eco-conscious e-commerce. Positioned to revolutionize eco-conscious e-commerce,
+                            Reboturn seamlessly integrates advanced solutions with environmental responsibility,
+                            reshaping the future of online shopping.
                         </p>
                     </motion.div>
                 </div>

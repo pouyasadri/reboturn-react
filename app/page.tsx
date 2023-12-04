@@ -36,13 +36,13 @@ const Home: FC = () => {
             <div id="aboutus">
                 <AboutUs/>
             </div>
-            <div id="works">
+            <div id="ourservices">
                 <ScrollComponent/>
             </div>
-            <div id="whatwedo">
+            <div id="ourinnovations">
                 {isMobile ? <WhatWeDoMobile/> : <WhatWeDo/>}
             </div>
-            <div id="whoweare">
+            <div id="meettheteam">
                 <WhoWeAre/>
             </div>
         </main>

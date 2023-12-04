@@ -4,11 +4,10 @@ import './globals.css'
 import Head from 'next/head'
 
 const inter = Inter({subsets: ['latin']})
-
+const viewport = 'width=device-width, initial-scale=1';
 export const metadata: Metadata = {
     title: 'ReboTurn',
     description: 'The new generation of e-commerce',
-    viewport: 'width=device-width, initial-scale=1',
 
 }
 

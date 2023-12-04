@@ -4,7 +4,7 @@ import {Squash as Hamburger} from "hamburger-react";
 import {AnimatePresence, motion} from "framer-motion";
 import {Link} from "react-scroll";
 
-const NAV_ITEMS = ["Work", "Who we are", "What we do", "Insights"];
+const NAV_ITEMS = ["About Us", "Our Services", "Our Innovations", "Meet the Team"];
 const NavMobile = memo(function NavMobile() {
     const [isOpen, setOpen] = useState(false);
     const ref = useRef(null);
@@ -21,7 +21,7 @@ const NavMobile = memo(function NavMobile() {
                         animate={{opacity: 1}}
                         exit={{opacity: 0}}
                         transition={{duration: 0.2}}
-                        className="fixed left-0 right-0 top-[5.5rem] p-5 pt-0 bg-[#c0c0c0] z-10 h-[100vh] border-b border-b-white/20"
+                        className="fixed left-0 right-0 top-[5.5rem] p-5 pt-0 bg-[#f2f2f2] z-10 h-[100vh] border-b border-b-white/20"
                     >
                         <ul className="grid gap-2">
                             {NAV_ITEMS.map((item, index) => {

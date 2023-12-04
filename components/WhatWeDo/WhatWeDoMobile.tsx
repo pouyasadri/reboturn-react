@@ -51,16 +51,12 @@ const WhatWeDoMobile: FC = () => {
                 <div
                     className="w-full mx-auto p-2.5 leading-relaxed">
                     <h1 className="text-3xl font-bold text-black mb-2.5">
-                        Behind the scene of Reboturn</h1>
+                        Reboturn’s Innovative Edge</h1>
                     <p className="text-lg text-justify font-light text-gray-600 my-2.5 ">
-                        Reboturn, an innovative startup, is reshaping the fashion shopping experience by combining
-                        the
-                        convenience of online shopping with the tactile feel of in-store purchases. Users can
-                        explore an
-                        extensive catalog of international brands, try items at home, and only pay for what they
-                        choose
-                        to
-                        keep.
+                        Explore the essence of Reboturn’s innovation, where every breakthrough paves the way for towards
+                        eco-conscious e-commerce. Positioned to revolutionize eco-conscious e-commerce, Reboturn
+                        seamlessly integrates advanced solutions with environmental responsibility, reshaping the future
+                        of online shopping.
                     </p>
                 </div>
                 <div className={"w-full mt-2  text-black relative"}>
