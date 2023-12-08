@@ -49,8 +49,8 @@ const Home: FC = () => {
             </div>}>
                 <motion.div
                     initial={{backdropFilter: 'blur(0px)'}}
-                    animate={{backdropFilter: 'blur(20px)'}}
-                    transition={{duration: 1, delay: 2}}
+                    animate={{backdropFilter: 'blur(30px)'}}
+                    transition={{duration: 2}}
                     className="fixed w-screen h-24 z-40"
                 >
                     <Navbar/>
