@@ -43,13 +43,14 @@ const Home: FC = () => {
         <main className="relative w-screen h-screen">
             <Suspense fallback={<div className={" lg:w-full h-full"}>
 
-                <video src={"/loading.mp4"} className={"w-screen mx-auto rounded-2xl h-full lg:object-cover object-contain"}
+                <video src={"/loading.mp4"}
+                       className={"w-screen mx-auto rounded-2xl h-full lg:object-cover object-contain"}
                        autoPlay loop
                        muted playsInline/>
             </div>}>
                 <motion.div
-                    initial={{backdropFilter: 'blur(0px)'}}
-                    animate={{backdropFilter: 'blur(30px)'}}
+                    initial={{backdropFilter: 'blur(0px)', WebkitBackdropFilter: 'blur(0px)'}}
+                    animate={{backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)'}}
                     transition={{duration: 2}}
                     className="fixed w-screen h-24 z-40"
                 >
