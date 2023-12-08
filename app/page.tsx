@@ -41,9 +41,9 @@ const Home: FC = () => {
 
     return (
         <main className="relative w-screen h-screen">
-            <Suspense fallback={<div className={"w-full h-full"}>
+            <Suspense fallback={<div className={" lg:w-full h-full"}>
 
-                <video src={"/loading.mp4"} className={"w-[90%] lg:w-screen mx-auto rounded-2xl h-full object-cover"}
+                <video src={"/loading.mp4"} className={"w-screen mx-auto rounded-2xl h-full lg:object-cover object-contain"}
                        autoPlay loop
                        muted playsInline/>
             </div>}>
