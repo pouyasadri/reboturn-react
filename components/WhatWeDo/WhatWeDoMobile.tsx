@@ -7,8 +7,6 @@ const WhatWeDoMobile: FC = () => {
     const targetRef = useRef(null);
     const {scrollYProgress} = useScroll({target: targetRef});
 
-    const textY = useTransform(scrollYProgress, [0.15, 0.3], ["0", "-24rem"]);
-
     const firstCardY = useTransform(scrollYProgress, [0, 0.15], ["90%", "0"]);
     const secondCardY = useTransform(scrollYProgress, [0.15, 0.3], ["90%", "1.6rem"]);
     const thirdCardY = useTransform(scrollYProgress, [0.3, 0.45], ["90%", "3.2rem"]);

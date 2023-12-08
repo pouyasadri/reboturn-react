@@ -75,11 +75,11 @@ const WhatWeDo: FC = () => {
 
     return (
         <section ref={targetRef} className="w-[90%] mx-auto my-20 flex lg:h-[300vh]">
-            <div className={"sticky top-[10%] flex h-screen justify-evenly items-center"}>
+            <div className={"sticky top-32 flex h-screen justify-evenly items-center"}>
                 {/*main text*/}
                 <div>
                     <motion.div style={{y: textY}}
-                                className="w-full max-md:mx-auto lg:w-1/2 h-screen p-2.5 lg:p-5 leading-relaxed">
+                                className="w-full max-md:mx-auto lg:w-1/2 h-screen lg:mt-10 p-2.5 lg:p-5 leading-relaxed">
                         <h1 className="text-3xl lg:text-6xl font-bold text-black mb-2.5 lg:mb-5">
                             Reboturn’s Innovative Edge</h1>
                         <p className="text-lg text-justify text-gray-700 my-2.5 lg:my-5">
@@ -90,7 +90,7 @@ const WhatWeDo: FC = () => {
                         </p>
                     </motion.div>
                 </div>
-                <div className={`w-full -top-16 max-md:mx-auto lg:w-1/2 lg:p-10 h-screen text-black relative`}>
+                <div className={`w-full -top-2 max-md:mx-auto lg:w-1/2 lg:p-10 h-screen text-black relative`}>
                     {cards.map((card, index) => (
                         <Card key={index} {...card} />
                     ))}

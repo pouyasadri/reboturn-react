@@ -21,7 +21,7 @@ const NavMobile = memo(function NavMobile() {
                         animate={{opacity: 1}}
                         exit={{opacity: 0}}
                         transition={{duration: 0.2}}
-                        className="fixed  left-0 right-0 top-[5.5rem] p-5 pt-0 bg-[#f2f2f2] z-40 h-[100vh] border-b border-b-white/20"
+                        className="fixed  left-0 right-0 top-[5.5rem] p-5 pt-0 backdrop-blur-[20px] z-40 h-[100vh] border-b border-b-white/20"
                     >
                         <ul className="grid gap-2">
                             {NAV_ITEMS.map((item, index) => {
@@ -56,19 +56,25 @@ const NavMobile = memo(function NavMobile() {
                             initial={{opacity: 0}}
                             animate={{opacity: 1}}
                             exit={{opacity: 0}}
-                            transition={{duration: 0.2,delay:0.5}} id={"contactus"} className={"w-[100%] h-[40%] mx-auto rounded-2xl my-10 relative flex items-center justify-center"}>
-                            <video src={"/output.mp4"} className={"rounded-2xl w-[100%] mx-auto h-[90%] object-fill"} autoPlay loop
+                            transition={{duration: 0.2, delay: 0.5}} id={"contactus"}
+                            className={"w-[100%] h-[40%] mx-auto rounded-2xl my-10 relative flex items-center justify-center"}>
+                            <video src={"/output.mp4"}
+                                   className={" w-screen mx-auto rounded-2xl h-full object-cover"}
+                                   autoPlay loop
                                    muted playsInline/>
                             <div
-                                className={"absolute bg-[#9ae1ef] cursor-pointer rounded-3xl z-10 text-center hover:bg-[#aee7f2] transition-all duration-200 mx-auto top-10 bottom-0 left-0 right-0 w-40 h-16 p-5 text-black font-medium flex items-center justify-center"}>
-                                <a href="mailto:info@reboturn.com">
-                                    Contact Us
-
-                                </a>
+                                className={"absolute z-10 mx-auto top-6 left-0 right-0 flex flex-col gap-2 items-center justify-evenly"}>
+                                <p className={"text-xl rounded font-mono font-semibold text-white p-2 backdrop-blur-[20px]"}>Your
+                                    Queries matter to us</p>
+                                <div
+                                    className={" bg-[#9ae1ef] cursor-pointer rounded-3xl hover:bg-[#aee7f2] transition-all duration-200 w-44  p-1.5 text-black text-lg font-normal "}>
+                                    <a href="mailto:info@reboturn.com">
+                                        Reach Out Now
+                                    </a>
+                                </div>
                             </div>
                         </motion.div>
                     </motion.div>
-
                 )}
             </AnimatePresence>
         </div>

@@ -1,9 +1,7 @@
 // Arrow component with 3D model
 import {memo, useEffect, useMemo, useState} from "react";
 import {MeshTransmissionMaterial, useGLTF,useTexture} from "@react-three/drei";
-import {useLoader} from "@react-three/fiber";
 import {debounce} from "lodash";
-import * as THREE from "three";
 const ARROW_MODEL_PATH = "/arrow.glb";
 const TEXTURE_PATH = 'texture.png';
 

@@ -1,7 +1,6 @@
 // components/WhoWeAre/Member.tsx
 import {FC, memo} from 'react';
 import Image from "next/image";
-import {Link} from "react-scroll";
 
 interface MemberProps {
     name: string;
