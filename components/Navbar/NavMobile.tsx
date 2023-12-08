@@ -63,7 +63,7 @@ const NavMobile = memo(function NavMobile() {
                                    autoPlay loop
                                    muted playsInline/>
                             <div
-                                className={"absolute z-10 mx-auto top-6 left-0 right-0 flex flex-col gap-2 items-center justify-evenly"}>
+                                className={"absolute z-10 mx-auto top-4 left-0 right-0 flex flex-col gap-2 items-center justify-evenly"}>
                                 <p className={"text-xl rounded font-mono font-semibold text-white p-2 backdrop-blur-[20px]"}>Your
                                     Queries matter to us</p>
                                 <div
