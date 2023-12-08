@@ -31,6 +31,7 @@ const NavMobile = memo(function NavMobile() {
                                         to={item.toLowerCase().replace(/\s/g, '')}
                                         smooth={true}
                                         duration={320 * (index + 1)}
+                                        offset={-100}
                                         onClick={() => setOpen((prev) => !prev)}
                                         className="w-full px-5 py-3 mt-1 rounded-xl flex items-center justify-between p-5"
                                     >
