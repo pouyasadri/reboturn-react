@@ -45,19 +45,19 @@ const WhatWeDoMobile: FC = () => {
 
     return (
         <section ref={targetRef} className={"w-[90%] mx-auto my-5 h-[400vh]"}>
-            <div className={"sticky top-20 h-screen "}>
+            <div className={"sticky top-24 h-screen "}>
                 <div
                     className="w-full mx-auto p-2.5 leading-relaxed">
-                    <h1 className="text-3xl font-bold text-black mb-2.5">
+                    <h1 className="text-2xl font-bold text-black mb-2.5">
                         Reboturn’s Innovative Edge</h1>
-                    <p className="text-lg text-justify font-light text-gray-600 my-2.5 ">
+                    <p className="text-base text-justify font-normal text-gray-600 my-2.5 ">
                         Explore the essence of Reboturn’s innovation, where every breakthrough paves the way for towards
                         eco-conscious e-commerce. Positioned to revolutionize eco-conscious e-commerce, Reboturn
                         seamlessly integrates advanced solutions with environmental responsibility, reshaping the future
                         of online shopping.
                     </p>
                 </div>
-                <div className={"w-full mt-2  text-black relative"}>
+                <div className={"w-full mt-1 text-black relative"}>
                     {cards.map((card, index) => (
                         <CardMobile key={index} {...card} />
                     ))}

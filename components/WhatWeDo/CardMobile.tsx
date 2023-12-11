@@ -13,7 +13,7 @@ interface CardProps {
 const CardMobile: FC<CardProps> = ({src, y, title, description, left = "0"}) => {
     return (
         <motion.div style={{y, left}} className={"absolute  h-30"}>
-            <div className={"w-[18rem] h-[23rem] "}
+            <div className={"w-[18rem] h-[21rem] "}
                  style={{
                      filter: "drop-shadow(-1px 2px 1px rgba(50, 50, 0, 0.6))",
                      clipPath: 'polygon(80% 0, 100% 20%, 100% 100%, 0 100%, 0 0)',
@@ -37,8 +37,8 @@ const CardMobile: FC<CardProps> = ({src, y, title, description, left = "0"}) => 
             </div>
             <div>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Image src={src} alt={""}
-                           className={"top-[10rem] rounded-3xl absolute z-20 left-[0.75rem] w-[13.5rem] shadow-2xl shadow-black object-cover h-[16rem]"}
+                    <Image src={src} alt={title}
+                           className={"top-[9.6rem] rounded-3xl absolute z-20 left-[0.5rem] w-[13.5rem] shadow-2xl shadow-black object-cover h-[14rem]"}
                            width={500} height={500}/>
                 </Suspense>
             </div>

@@ -21,7 +21,8 @@ const NavMobile = memo(function NavMobile() {
                         animate={{opacity: 1}}
                         exit={{opacity: 0}}
                         transition={{duration: 0.2}}
-                        className="fixed  left-0 right-0 top-[5.5rem] p-5 pt-0 backdrop-blur-[20px] z-40 h-[100vh] border-b border-b-white/20"
+                        style={{backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)',}}
+                        className="fixed  left-0 right-0 top-[5.5rem] p-5 pt-0 z-40 h-[100vh] border-b border-b-white/20"
                     >
                         <ul className="grid gap-2">
                             {NAV_ITEMS.map((item, index) => {
