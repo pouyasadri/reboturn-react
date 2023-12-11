@@ -45,7 +45,7 @@ const WhatWeDoMobile: FC = () => {
 
     return (
         <section ref={targetRef} className={"w-[90%] mx-auto my-5 h-[400vh]"}>
-            <div className={"sticky top-0 h-screen "}>
+            <div className={"sticky top-20 h-screen "}>
                 <div
                     className="w-full mx-auto p-2.5 leading-relaxed">
                     <h1 className="text-3xl font-bold text-black mb-2.5">

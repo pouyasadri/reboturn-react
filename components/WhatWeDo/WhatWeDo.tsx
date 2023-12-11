@@ -14,10 +14,10 @@ const WhatWeDo: FC = () => {
 
     const textY = useTransform(scrollYProgress, [0.65, 0.8], ["0", "-50rem"]);
 
-    const firstCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-98%"]);
-    const secondCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-182%"]);
-    const thirdCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "0%"]);
-    const fourthCardX = useTransform(scrollYProgress, [0.6, 1], ["0", "-274%"]);
+    const firstCardX = useTransform(scrollYProgress, [0.6, 0.89], ["0", "-98%"]);
+    const secondCardX = useTransform(scrollYProgress, [0.6, 0.89], ["0", "-182%"]);
+    const thirdCardX = useTransform(scrollYProgress, [0.6, 0.89], ["0", "0%"]);
+    const fourthCardX = useTransform(scrollYProgress, [0.6, 0.89], ["0", "-274%"]);
 
     const firstCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["0", "3rem"]);
     const secondCardEndY = useTransform(scrollYProgress, [0.6, 0.8], ["1.6rem", "3rem"]);
