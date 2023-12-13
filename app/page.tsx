@@ -38,16 +38,27 @@ const useWindowSize = () => {
 
 const Home: FC = () => {
     const isMobile = useWindowSize();
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
         <main className="relative w-screen h-screen">
-            <Suspense fallback={<div className={" lg:w-full h-full"}>
 
-                <video src={"/loading.mp4"}
-                       className={"w-screen mx-auto rounded-2xl h-full lg:object-cover object-contain"}
-                       autoPlay loop
-                       muted playsInline/>
-            </div>}>
+            <Suspense fallback={isLoading &&
+                <div className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
+                    <video src={"/loading1.MP4"}
+                           className={"w-96 h-96 mx-auto my-0 rounded-2xl lg:object-contain object-contain"}
+                           autoPlay loop
+                           muted playsInline/>
+                </div>}>
+
                 <motion.div
                     initial={{backdropFilter: 'blur(0px)', WebkitBackdropFilter: 'blur(0px)'}}
                     animate={{backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)'}}
