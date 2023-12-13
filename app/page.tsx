@@ -44,7 +44,7 @@ const Home: FC = () => {
 
             <Suspense fallback={
                 <div className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
-                    <video src={"/loading1.MP4"}
+                    <video src={"/loading2.mp4"}
                            className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}
                            preload="auto"
                            autoPlay={true} loop={true} controls={false}
