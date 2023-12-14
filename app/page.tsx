@@ -1,5 +1,5 @@
 "use client"
-import {FC, useState, useEffect, useCallback, Fragment} from 'react';
+import {FC, useState, useEffect, useCallback, Fragment, useRef} from 'react';
 import dynamic from 'next/dynamic';
 import {debounce} from 'lodash';
 import {motion} from 'framer-motion';
@@ -38,7 +38,14 @@ const useWindowSize = () => {
 const Home: FC = () => {
     const isMobile = useWindowSize();
     const [isLoading, setIsLoading] = useState(true);
+    const videoRef = useRef<HTMLDivElement | null>(null);
 
+    useEffect(() => {
+        const videoElement = videoRef.current?.querySelector('video');
+        if (videoElement) {
+            videoElement.play();
+        }
+    }, []);
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
@@ -50,7 +57,7 @@ const Home: FC = () => {
     return (
         <Fragment>
             {isLoading &&
-                <div className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
+                <div ref={videoRef} className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
                     <video src={"/loading2.mp4"}
                            className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}
                            preload="auto"
@@ -62,7 +69,7 @@ const Home: FC = () => {
                 <motion.div
                     initial={{backdropFilter: 'blur(0px)', WebkitBackdropFilter: 'blur(0px)'}}
                     animate={{backdropFilter: 'blur(30px)', WebkitBackdropFilter: 'blur(30px)'}}
-                    transition={{duration: 2,delay:2}}
+                    transition={{duration: 2, delay: 2}}
                     className="fixed w-screen h-24 z-40"
                 >
                     <Navbar/>
