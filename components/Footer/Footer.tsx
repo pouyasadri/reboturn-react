@@ -4,7 +4,7 @@ const Footer: FC = () => {
     return (
         <section id={"contactus"}
                  className={"w-[98%] h-[60%] mx-auto rounded-2xl my-28 relative flex items-center justify-center lg:justify-start"}>
-            <video src={"/contactus.mp4"} className={" w-screen mx-auto rounded-2xl h-full object-fill lg:object-cover"} autoPlay loop
+            <video src={"/contactus.mp4"} className={" w-screen mx-auto rounded-2xl h-full max-md:object-fill lg:object-cover"} autoPlay loop
                    muted playsInline/>
             <div className={"absolute z-10 mx-auto max-md:top-10 max-md:left-0 max-md:right-0 lg:float-left flex flex-col gap-4 lg:ml-20 max-md:items-center justify-evenly lg:justify-center"}>
                 <p className={"lg:text-3xl rounded text-xl font-mono font-semibold text-white p-2 backdrop-blur"}>Your Queries matter to us</p>
