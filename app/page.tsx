@@ -42,7 +42,7 @@ const Home: FC = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 2000);
+        }, 2500);
 
         return () => clearTimeout(timer);
     }, []);
@@ -51,7 +51,7 @@ const Home: FC = () => {
         <Fragment>
             {isLoading &&
                 <div className={"bg-transparent lg:w-screen flex justify-center items-center h-screen"}>
-                    <Image src={"/loading.gif"} alt={"loading"} width={200} height={200}
+                    <Image priority={true} src={"/loading.gif"} alt={"loading"} width={200} height={200}
                            className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}/>
                 </div>}
 
