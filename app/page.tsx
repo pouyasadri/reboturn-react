@@ -38,14 +38,6 @@ const useWindowSize = () => {
 const Home: FC = () => {
     const isMobile = useWindowSize();
     const [isLoading, setIsLoading] = useState(true);
-    const videoRef = useRef<HTMLDivElement | null>(null);
-
-    useEffect(() => {
-        const videoElement = videoRef.current?.querySelector('video');
-        if (videoElement) {
-            videoElement.play();
-        }
-    }, []);
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
@@ -57,7 +49,7 @@ const Home: FC = () => {
     return (
         <Fragment>
             {isLoading &&
-                <div ref={videoRef} className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
+                <div className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
                     <video src={"/loading2.mp4"}
                            className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}
                            preload="auto"
