@@ -5,6 +5,7 @@ import {debounce} from 'lodash';
 import {motion} from 'framer-motion';
 import Navbar from "@/components/Navbar/Navbar";
 import HeroSection from "@/components/HeroSection/HeroSection";
+import Image from "next/image";
 
 const FooterSection = dynamic(() => import('@/components/Footer/Footer'), {ssr: false});
 const AboutUs = dynamic(() => import('@/components/About/AboutUs'), {ssr: false});
@@ -49,12 +50,9 @@ const Home: FC = () => {
     return (
         <Fragment>
             {isLoading &&
-                <div className={"bg-[#f4f4f4] lg:w-screen flex justify-center items-center h-screen"}>
-                    <video src={"/loading.gif"}
-                           className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}
-                           preload="auto"
-                           autoPlay={true} loop={true} controls={false}
-                           muted={true} playsInline={true}/>
+                <div className={"bg-transparent lg:w-screen flex justify-center items-center h-screen"}>
+                    <Image src={"/loading.gif"} alt={"loading"} width={200} height={200}
+                           className={"w-96 h-96 mx-auto my-0 rounded-2xl object-contain"}/>
                 </div>}
 
             {!isLoading && <main className="relative w-screen h-screen">
