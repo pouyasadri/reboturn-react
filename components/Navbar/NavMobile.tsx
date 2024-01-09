@@ -70,7 +70,7 @@ const NavMobile = memo(function NavMobile() {
                                     Queries matter to us</p>
                                 <div
                                     className={" bg-[#9ae1ef] cursor-pointer rounded-3xl hover:bg-[#aee7f2] transition-all duration-200 w-44  p-1.5 text-black text-lg font-normal "}>
-                                    <a href="mailto:info@reboturn.com">
+                                    <a href="mailto:reboturn@gmail.com">
                                         Reach Out Now
                                     </a>
                                 </div>
